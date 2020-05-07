@@ -121,7 +121,7 @@ function nextQuestion()
         var place = compareScores();
 
         // top 10, set entry and place we got
-        if (place < maxHighScores && quizVars.score > 0) 
+        if (quizVars.score > 0 && place < maxHighScores) 
         {
             quizVars.status = QUIZ_STATUS.hsEntry;
             quizVars.place = place;
@@ -171,9 +171,11 @@ function compareScores()
         if (parseInt(quizVars.score) > parseInt(quizVars.highScores[rtnIndex].score))
             return rtnIndex;
 
+        // goto next index
         rtnIndex++;
     }
 
+    // return our index/placement
     return rtnIndex;
 }
 

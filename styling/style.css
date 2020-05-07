@@ -47,6 +47,13 @@ main
     display: none;
 }
 
+#quiz-end section
+{
+    text-align: left;
+    width:150px;
+    margin: 0 auto;
+}
+
 footer
 {
     padding: 20px;

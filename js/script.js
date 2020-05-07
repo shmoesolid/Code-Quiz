@@ -51,18 +51,29 @@ switch (quizVars.status)
     // display end of game stuff
     case QUIZ_STATUS.end:
 
-        // header 
-        content[quizVars.status].innerHTML += "High Scores:<br />";
+        // create child stats element
+        /* came across a weird issue where simply appending the innerHTML of quiz-end content
+         * caused the button already within to not work at all.
+         * decided to try using the createElement method and it worked.
+         * later found that innerHTML removes any and all listen events within...  DOH! see link:
+         * https://stackoverflow.com/questions/2946656/advantages-of-createelement-over-innerhtml/2947012#2947012
+        */
+        var statsElm = document.createElement("section");
+
+        // start applying data
+        statsElm.innerHTML = "<h3>High Scores:</h3>";
 
         // display high scores
         for (var i = 0; i < quizVars.highScores.length; i++)
-            content[quizVars.status].innerHTML += 
-                (i+1) + ". " + quizVars.highScores[i].name + " (" + quizVars.highScores[i].score +")<br />";
+            statsElm.innerHTML += (i+1) + ". " + quizVars.highScores[i].name + " (" + quizVars.highScores[i].score +")<br />";
 
         // display stats
-        content[quizVars.status].innerHTML += "<br />Correct: " +quizVars.correct +" / "+ quizVars.total;
-        content[quizVars.status].innerHTML += "<br />Time Left: " + quizVars.timer.toFixed(2);
-        content[quizVars.status].innerHTML += "<br />Score: " + quizVars.score;
+        statsElm.innerHTML += "<br />Your Score: " + quizVars.score;
+        statsElm.innerHTML += "<br />Correct: " +quizVars.correct +" / "+ quizVars.total;
+        statsElm.innerHTML += "<br />Time Left: " + quizVars.timer.toFixed(2);
+
+        // attach the stats element before our reset scores button
+        content[quizVars.status].insertBefore(statsElm, content[quizVars.status].firstChild);
 }
 
 // toggle our div display for where we are at

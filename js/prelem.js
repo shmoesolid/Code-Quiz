@@ -34,7 +34,7 @@ var content =
     document.getElementById("quiz-start"),      // 0 or start
     document.getElementById("quiz-active"),     // 1 or active
     document.getElementById("quiz-hs-entry"),   // 2 or hsEntry
-    document.getElementById("quiz-end")         // 3 or end
+    document.getElementById("quiz-end"),        // 3 or end
 ];
 
 // button element references
