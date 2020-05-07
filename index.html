@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <!-- title and standard meta usage -->
+    <title>Javascript Quiz by Shane Koehler</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="quiz,javascript,js,test,game" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- link to our style sheet -->
+    <link rel="stylesheet" href="styling/style.css" />
+</head>
+
+<body>
+
+    <!-- header -->
+    <header>
+        <h1>Javascript Quiz</h1>
+        <button id="button-reset">RESTART GAME</button><br />
+        
+    </header>
+
+    <!-- main content -->
+    <main>
+        <!-- explains "game" and has start button-->
+        <div id="quiz-start">
+            <button id="button-start">START QUIZ</button>
+        </div>
+
+        <!-- display actual quiz questions -->
+        <div id="quiz-active">
+            <section id="quiz-question">Question?</section>
+            <section id="quiz-answers">
+                <input type="radio" id="0" name="answers" value="0" />
+                <label for="0" id="0-answer">answer</label><br />
+                <input type="radio" id="1" name="answers" value="1" />
+                <label for="1" id="1-answer">answer</label><br />
+                <input type="radio" id="2" name="answers" value="2" />
+                <label for="2" id="2-answer">answer</label><br />
+                <input type="radio" id="3" name="answers" value="3" />
+                <label for="3" id="3-answer">answer</label><br />
+            </section>
+            <section class="quiz-footer">
+                <button id="quiz-next">Next</button><br /><br />
+                Time Left: <span id="quiz-status"></span>
+            </section>
+        </div>
+
+        <!-- quiz is over, enter high score -->
+        <div id="quiz-hs-entry">
+            <form id="quiz-hs-form" method="POST">
+                <input type="text" id="quiz-hs-input" name="quiz-hs-input" maxlength="3" placeholder="Enter your name..."  />
+            </form>
+        </div>
+
+        <!-- quiz is over, show results/reset quiz -->
+        <div id="quiz-end">
+            
+        </div>
+
+        <br /><br /><button id="reset-score">RESET HIGH SCORES</button><br /><br />
+    </main>
+
+    <!-- footer -->
+    <footer>
+        Created By Shane Koehler
+    </footer>
+
+    <!-- src to our items object and general functions -->
+    <script src="js/prelem.js"></script>
+    <script src="js/func.js"></script>
+
+    <!-- src to our main quiz script -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

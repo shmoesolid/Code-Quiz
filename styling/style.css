@@ -1,0 +1,53 @@
+body
+{
+    text-align: center;
+}
+
+header
+{
+    padding: 20px;
+}
+
+main
+{
+    padding: 20px;
+}
+
+#quiz-start
+{
+    display: none;
+}
+
+#quiz-active
+{
+    text-align: left;
+    margin: 0 auto;
+    width: 400px;
+    display: none;
+}
+
+#quiz-active .quiz-footer
+{
+    text-align: center;
+    padding: 20px;
+}
+
+#quiz-question
+{
+    margin-bottom: 10px;
+}
+
+#quiz-hs-entry
+{
+    display: none;
+}
+
+#quiz-end
+{
+    display: none;
+}
+
+footer
+{
+    padding: 20px;
+}
