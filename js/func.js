@@ -46,8 +46,9 @@ function reset()
 
 function resetScore()
 {
-    // log
-    console.log('reset scores');
+    // confirm if want to delete
+    if (!confirm("Are you sure you want to delete all high scores?"))
+        return;
 
     // empty it out
     quizVars.highScores = [];
