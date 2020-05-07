@@ -1,6 +1,7 @@
 
 // quiz settings
 const STORAGE_NAME = "SK_QUIZ_VARS"; // a unique name
+var maxHighScores = 5;
 var maxTimer = 30.00; // in seconds
 var maxTimerSubWrong = -2.5; // in seconds
 

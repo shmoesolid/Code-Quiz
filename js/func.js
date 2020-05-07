@@ -121,7 +121,7 @@ function nextQuestion()
         var place = compareScores();
 
         // top 10, set entry and place we got
-        if (place < 10 && quizVars.score > 0) 
+        if (place < maxHighScores && quizVars.score > 0) 
         {
             quizVars.status = QUIZ_STATUS.hsEntry;
             quizVars.place = place;
@@ -147,8 +147,8 @@ function highScore(event)
     // add name in where it belongs
     quizVars.highScores.splice(quizVars.place, 0, newScore);
 
-    // make sure we chop off lowest score
-    if (quizVars.highScores.length > 9) quizVars.highScores.pop();
+    // make sure we chop off lowest score(s) based on max
+    while (quizVars.highScores.length > maxHighScores) quizVars.highScores.pop();
 
     // set status to end
     quizVars.status = QUIZ_STATUS.end;
