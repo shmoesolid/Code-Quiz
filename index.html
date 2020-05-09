@@ -55,19 +55,18 @@
         <div id="quiz-active" class="bg-light p-4 rounded">
             <div class="card">
                 <div class="card-body">
-                    <div class="card-title"><section id="quiz-question">Question?</section></div>
+                    <div class="card-title font-weight-bold"><section id="quiz-question">Question?</section></div>
                     <div class="card-text text-left">
-                        <section id="quiz-answers" class="form-check">
-                            <input class="form-check-input" type="radio" id="0" name="answers" value="0" />
-                            <label class="form-check-label" for="0" id="0-answer">answer</label><br />
-                            <input class="form-check-input" type="radio" id="1" name="answers" value="1" />
-                            <label class="form-check-label" for="1" id="1-answer">answer</label><br />
-                            <input class="form-check-input" type="radio" id="2" name="answers" value="2" />
-                            <label class="form-check-label" for="2" id="2-answer">answer</label><br />
-                            <input class="form-check-input" type="radio" id="3" name="answers" value="3" />
-                            <label class="form-check-label" for="3" id="3-answer">answer</label><br />
+                        <section id="quiz-answers">
+                            <input type="radio" name="answers" id="0" value="0" />
+                            <label for="0" class="rounded">Answer 0</label>
+                            <input type="radio" name="answers" id="1" value="1" />
+                            <label for="1" class="rounded">Answer 1</label>
+                            <input type="radio" name="answers" id="2" value="2" />
+                            <label for="2" class="rounded">Answer 2</label>
+                            <input type="radio" name="answers" id="3" value="3" />
+                            <label for="3" class="rounded">Answer 3</label>
                         </section>
-                        
                     </div>
                 </div>
             </div>
@@ -99,7 +98,7 @@
                 <div class="col sm-6" >
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-title"><h3>Stats</h3></div>
+                            <div class="card-title"><h3>Quiz Stats</h3></div>
                             <div class="card-text"><section id="quiz-stats"></section></div>
                         </div>
                     </div>

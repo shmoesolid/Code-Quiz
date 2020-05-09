@@ -47,8 +47,13 @@ var resetScoreButton = document.getElementById("reset-score");
 var questionElm = document.getElementById("quiz-question"); // question
 var answersElm = document.getElementById("quiz-answers"); // contains answer radio selections
 var statusElm = document.getElementById("quiz-status"); // status messages get put here
-var answerInputElms = answersElm.getElementsByTagName("input");
+
 var answerLabelElms = answersElm.getElementsByTagName("label");
+//var answerInputElms = [];
+//for (var i = 0; i < answerLabelElms.length; i++)
+//    answerInputElms[i] = answerLabelElms[i].firstElementChild;
+var answerInputElms = answersElm.getElementsByTagName("input");
+
 var hsInputElm = document.getElementById("quiz-hs-input");
 var hsFormElm = document.getElementById("quiz-hs-form");
 var statsElm = document.getElementById("quiz-stats");

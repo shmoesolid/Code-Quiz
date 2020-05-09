@@ -110,31 +110,39 @@ function nextQuestion()
 
     // check if quiz is over
     if (!quizVars.availQID)
-    {
-        // clear timer
-        clearInterval(timerHandle);
-        timerHandle = null;
-
-        // set score
-        quizVars.score = (quizVars.timer.toFixed(2) * quizVars.correct * quizVars.total).toFixed();
-
-        // compare score with others to see if in top 10
-        var place = compareScores();
-
-        // top 10, set entry and place we got
-        if (quizVars.score > 0 && place < maxHighScores) 
-        {
-            quizVars.status = QUIZ_STATUS.hsEntry;
-            quizVars.place = place;
-        }
-
-        // not top 10, go straight to end
-        else quizVars.status = QUIZ_STATUS.end;
-    }
+        finishOffQuiz();
 
     // save and reload
     saveQuizVars();
     loadByStatus();
+}
+
+// handles timer clearing out and scoring
+function finishOffQuiz()
+{
+    // clear timer
+    clearInterval(timerHandle);
+    timerHandle = null;
+
+    // handles it so if time does run out but we got some questions
+    // right our score won't be 0
+    var scoreTimer = Math.max(quizVars.timer, 1);
+
+    // set score
+    quizVars.score = (scoreTimer.toFixed(2) * quizVars.correct * quizVars.total).toFixed();
+
+    // compare score with others to see if in top 10
+    var place = compareScores();
+
+    // top 10, set entry and place we got
+    if (quizVars.score > 0 && place < maxHighScores) 
+    {
+        quizVars.status = QUIZ_STATUS.hsEntry;
+        quizVars.place = place;
+    }
+
+    // not top 10, go straight to end
+    else quizVars.status = QUIZ_STATUS.end;
 }
 
 function highScore(event)
@@ -192,12 +200,8 @@ function updateTime(numBy = -.01) // in seconds
     // at the time limit
     if (quizVars.timer <= 0)
     {
-        // clear timer
-        clearInterval(timerHandle);
-        timerHandle = null;
-
-        // game over
-        quizVars.status = QUIZ_STATUS.end;
+        // it's over, wrap it up
+        finishOffQuiz();
 
         // save and reload
         saveQuizVars();
@@ -271,7 +275,12 @@ function loadByStatus()
 
             // get element references in answers element
             for (var i = 0; i < curQuizItem.answers.length; i++)
-                answerLabelElms[i].innerHTML = "<code> " + curQuizItem.answers[i] + " </code>";
+            {
+                answerLabelElms[i].innerHTML = curQuizItem.answers[i];
+                answerInputElms[i].checked = false;
+
+            }
+                
 
             // leave switch
             break;
@@ -288,7 +297,7 @@ function loadByStatus()
 
             // no high scores added
             if (!quizVars.highScores.length)
-                toAdd += "No high scores yet!<br />";
+                toAdd += "No high scores!";
 
             // set string to hs element
             hsElm.innerHTML = toAdd;

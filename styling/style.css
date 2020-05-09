@@ -3,7 +3,6 @@ body
     text-align: center;
     background-color: #e4e4e4;
 }
-
 header
 {
     padding: 6em 0;
@@ -11,7 +10,6 @@ header
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 main
 {
     padding: 0;
@@ -27,6 +25,7 @@ footer
     border-top: #444 solid 10px;
 }
 
+/* force no display on our various quiz states */
 #quiz-start, #quiz-active, #quiz-hs-entry, #quiz-end
 {
     display: none;
@@ -48,4 +47,36 @@ footer
 [class*="col"]
 {
     margin-bottom: 20px;
+}
+
+/**
+ * the following for answers creates a button
+ * pressed like radio input, removes the actual
+ * radio circle handle
+*/
+#quiz-answers input 
+{
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+#quiz-answers label
+{
+    background-color: #ddd;
+    padding: 10px;
+    text-align: center;
+    display: block;
+}
+#quiz-answers label:hover
+{
+    cursor: pointer;
+    background-color: #d5d5d5;
+}
+#quiz-answers input:checked + label
+{
+    background-color: #444;
+    color: #eee;
 }
