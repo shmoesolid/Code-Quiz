@@ -41,7 +41,7 @@ function reset()
 
     // save and reload
     saveQuizVars();
-    location.reload();
+    loadByStatus();
 }
 
 function resetScore()
@@ -55,7 +55,7 @@ function resetScore()
 
     // save and reload
     saveQuizVars();
-    location.reload();
+    loadByStatus();
 }
 
 // listener callback for starting quiz button
@@ -69,7 +69,7 @@ function startQuiz()
 
     // save and reload
     saveQuizVars();
-    location.reload();
+    loadByStatus();
 }
 
 // listener callback for next question button
@@ -91,7 +91,7 @@ function nextQuestion()
 
             // WRONG
             else 
-                quizVars.timer += maxTimerSubWrong; // decrease timer
+                quizVars.timer = Math.max( (quizVars.timer + maxTimerSubWrong), 0); // decrease timer
 
             // reset
             curElement.checked = false;
@@ -102,11 +102,8 @@ function nextQuestion()
 
         // we didn't check a thing, still wrong
         if ( i == (answerInputElms.length-1) )
-            quizVars.timer += maxTimerSubWrong; // decrease timer
+            quizVars.timer = Math.max( (quizVars.timer + maxTimerSubWrong), 0); // decrease timer
     }
-
-    // increase total questions
-    quizVars.total++;
 
     // clear current question ID
     quizVars.curQID = "";
@@ -114,6 +111,10 @@ function nextQuestion()
     // check if quiz is over
     if (!quizVars.availQID)
     {
+        // clear timer
+        clearInterval(timerHandle);
+        timerHandle = null;
+
         // set score
         quizVars.score = (quizVars.timer.toFixed(2) * quizVars.correct * quizVars.total).toFixed();
 
@@ -133,7 +134,7 @@ function nextQuestion()
 
     // save and reload
     saveQuizVars();
-    location.reload();
+    loadByStatus();
 }
 
 function highScore(event)
@@ -155,7 +156,7 @@ function highScore(event)
 
     // save and reload
     saveQuizVars();
-    location.reload();
+    loadByStatus();
 }
 
 // compares current score to all score's and determines where it should be placed
@@ -189,17 +190,18 @@ function updateTime(numBy = -.01) // in seconds
     statusElm.innerHTML = quizVars.timer.toFixed(2);
 
     // at the time limit
-    if (quizVars.timer <= 0 && !resetting)
+    if (quizVars.timer <= 0)
     {
         // clear timer
         clearInterval(timerHandle);
+        timerHandle = null;
 
         // game over
         quizVars.status = QUIZ_STATUS.end;
 
         // save and reload
         saveQuizVars();
-        location.reload();
+        loadByStatus();
     }
 }
 
@@ -218,4 +220,90 @@ function toggleDisplay(quizStatus)
 function _randomInt(num)
 {
   return Math.floor( Math.random() * num );
+}
+
+// keeps whole page from refreshing
+function loadByStatus()
+{
+    // load quiz vars if possible
+    // this is here just in case page reload
+    quizVars = loadQuizVars();
+
+    // do various things based on our game status
+    switch (quizVars.status)
+    {
+        case QUIZ_STATUS.start:
+
+            // set quiz question total count and save
+            quizVars.total = quizItems.getAllQIDs().length;
+            saveQuizVars();
+
+            // leave switch
+            break;
+
+        // setup/display question and answers
+        case QUIZ_STATUS.active:
+
+            // check if no current question id
+            if (!quizVars.curQID)
+            {
+                // get available question IDs whether from storage or fresh start
+                quizVars.availQID = (!quizVars.availQID) ? quizItems.getAllQIDs() : quizVars.availQID;
+
+                // get new id out of available ids randomly
+                quizVars.curQID = quizVars.availQID.charAt( _randomInt(quizVars.availQID.length) );
+
+                // remove that id
+                quizVars.availQID = quizVars.availQID.replace(quizVars.curQID, "");
+            }
+
+            // set timer visual
+            statusElm.innerHTML = quizVars.timer.toFixed(2);
+
+            // set new interval if our handle is null
+            if (!timerHandle) timerHandle = setInterval(updateTime, 10);
+
+            // simplify our items object reference
+            var curQuizItem = quizItems[ quizVars.curQID.toString() ];
+
+            // set question
+            questionElm.innerHTML = curQuizItem.question;
+
+            // get element references in answers element
+            for (var i = 0; i < curQuizItem.answers.length; i++)
+                answerLabelElms[i].innerHTML = "<code> " + curQuizItem.answers[i] + " </code>";
+
+            // leave switch
+            break;
+        
+        // display end of game stuff
+        case QUIZ_STATUS.end:
+
+            // start building hs string
+            var toAdd = "";
+            
+            // add high scores
+            for (var i = 0; i < quizVars.highScores.length; i++)
+                toAdd += (i+1) + ". " + quizVars.highScores[i].name + " (" + quizVars.highScores[i].score +")<br />";
+
+            // no high scores added
+            if (!quizVars.highScores.length)
+                toAdd += "No high scores yet!<br />";
+
+            // set string to hs element
+            hsElm.innerHTML = toAdd;
+
+            // build stats string
+            toAdd = "Your Score: " + quizVars.score;
+            toAdd += "<br />Correct: " +quizVars.correct +" / "+ quizVars.total;
+            toAdd += "<br />Time Left: " + quizVars.timer.toFixed(2);
+
+            // set string to stats element
+            statsElm.innerHTML = toAdd;
+    }
+
+    // toggle our div display for where we are at
+    // display at the end so stuff is loaded, it's all 
+    // hidden up until this point anyways
+    toggleDisplay(quizVars.status);
 }

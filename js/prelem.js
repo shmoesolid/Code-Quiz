@@ -51,6 +51,8 @@ var answerInputElms = answersElm.getElementsByTagName("input");
 var answerLabelElms = answersElm.getElementsByTagName("label");
 var hsInputElm = document.getElementById("quiz-hs-input");
 var hsFormElm = document.getElementById("quiz-hs-form");
+var statsElm = document.getElementById("quiz-stats");
+var hsElm = document.getElementById("quiz-hs");
 
 // i could have done individual object declarations for each question with methods
 // attached to each, but this will do for a small project that won't be continued

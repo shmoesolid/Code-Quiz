@@ -5,9 +5,15 @@
     <!-- title and standard meta usage -->
     <title>Javascript Quiz by Shane Koehler</title>
     <meta charset="UTF-8" />
-    <meta name="description" content="" />
+    <meta name="description" content="A Javascript quiz created by Shane Koehler that asks basic questions in random order.  Score is based on speed and accuracy." />
     <meta name="keywords" content="quiz,javascript,js,test,game" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- bootstrap includes -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
     <!-- link to our style sheet -->
     <link rel="stylesheet" href="styling/style.css" />
@@ -16,54 +22,98 @@
 <body>
 
     <!-- header -->
-    <header>
-        <h1>Javascript Quiz</h1>
-        <button id="button-reset">RESTART GAME</button><br /><br />
+    <header class="jumbotron text-center text-white shadow " style="margin:20px auto;width:90%;">
+        <section class="rounded p-2 w-75" style="background: rgba(30, 30, 30, 0.6); margin:0 auto 20px auto;">
+            <h1 class="text-light font-weight-bold">Javascript Quiz</h1>
+            <p>A simple quiz game that tests your speed and accuracy!</p>
+        </section>
     </header>
 
     <!-- main content -->
-    <main>
+    <main class="w-75 shadow " >
+
         <!-- explains "game" and has start button-->
-        <div id="quiz-start">
-            blah blah game blah blah<br /><br />
-            <button id="button-start">START QUIZ</button>
+        <div id="quiz-start" class="bg-light p-4">
+            <div class="card" style="margin:0 auto 20px auto;">
+                <div class="card-body">
+                    <div class="card-title"><h3>Instructions</h3></div>
+                    <div class="card-text text-left">
+                        <ol>
+                            <li>Start the quiz</li>
+                            <li>Answer the question presented then click next</li>
+                            <li>Extra time will be taken away if answered incorrectly</li>
+                            <li>Enter your initials if made a high score</li>
+                            <li>Start again to beat your score.  Yay fun.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <button id="button-start" class="btn btn-primary">START QUIZ</button>
         </div>
 
         <!-- display actual quiz questions -->
-        <div id="quiz-active">
-            <section id="quiz-question">Question?</section>
-            <section id="quiz-answers">
-                <input type="radio" id="0" name="answers" value="0" />
-                <label for="0" id="0-answer">answer</label><br />
-                <input type="radio" id="1" name="answers" value="1" />
-                <label for="1" id="1-answer">answer</label><br />
-                <input type="radio" id="2" name="answers" value="2" />
-                <label for="2" id="2-answer">answer</label><br />
-                <input type="radio" id="3" name="answers" value="3" />
-                <label for="3" id="3-answer">answer</label><br />
-            </section>
-            <section class="quiz-footer">
-                <button id="quiz-next">Next</button><br /><br />
-                Time Left: <span id="quiz-status"></span>
+        <div id="quiz-active" class="bg-light p-4 rounded">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title"><section id="quiz-question">Question?</section></div>
+                    <div class="card-text text-left">
+                        <section id="quiz-answers" class="form-check">
+                            <input class="form-check-input" type="radio" id="0" name="answers" value="0" />
+                            <label class="form-check-label" for="0" id="0-answer">answer</label><br />
+                            <input class="form-check-input" type="radio" id="1" name="answers" value="1" />
+                            <label class="form-check-label" for="1" id="1-answer">answer</label><br />
+                            <input class="form-check-input" type="radio" id="2" name="answers" value="2" />
+                            <label class="form-check-label" for="2" id="2-answer">answer</label><br />
+                            <input class="form-check-input" type="radio" id="3" name="answers" value="3" />
+                            <label class="form-check-label" for="3" id="3-answer">answer</label><br />
+                        </section>
+                        
+                    </div>
+                </div>
+            </div>
+            <section class="p-2 text-center mt-1 text-dark">
+                <button id="quiz-next" class="btn btn-primary">Next</button><br /><br />
+                (Time Left: <span id="quiz-status"></span>)
             </section>
         </div>
 
         <!-- quiz is over, enter high score -->
-        <div id="quiz-hs-entry">
+        <div id="quiz-hs-entry" class="bg-light p-4 rounded">
             <form id="quiz-hs-form" method="POST">
                 <input type="text" id="quiz-hs-input" name="quiz-hs-input" maxlength="3" placeholder="Enter your intials..."  />
+                <button type="submit" class="btn btn-primary">SUBMIT</button>
             </form>
         </div>
 
         <!-- quiz is over, show results/reset quiz -->
-        <div id="quiz-end">
-            <br /><button id="reset-score">RESET HIGH SCORES</button>
+        <div id="quiz-end" class="bg-light p-4 rounded content">
+            <div class="row">
+                <div class="col sm-6" >
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title"><h3>High Scores</h3></div>
+                            <div class="card-text"><section id="quiz-hs"></section></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col sm-6" >
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title"><h3>Stats</h3></div>
+                            <div class="card-text"><section id="quiz-stats"></section></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <button id="button-reset" class="btn btn-secondary" style="margin-bottom:5px;">RESTART QUIZ</button>
+            <button id="reset-score" class="btn btn-secondary" style="margin-bottom:5px;">RESET HIGH SCORES</button>
         </div>
     </main>
 
     <!-- footer -->
-    <footer>
-        Created by Shane Koehler
+    <footer class="bg-light p-4 text-dark">
+        &copy; Shane Koehler 
     </footer>
 
     <!-- src to our items object and general functions -->

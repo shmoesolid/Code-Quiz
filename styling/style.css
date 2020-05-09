@@ -1,19 +1,33 @@
 body
 {
     text-align: center;
+    background-color: #e4e4e4;
 }
 
 header
 {
-    padding: 20px;
+    padding: 6em 0;
+    background-image: url('../img/code.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 main
 {
-    padding: 20px;
+    padding: 0;
+    margin: 0 auto 100px auto;
 }
 
-#quiz-start
+/* fixed bottom footer */
+footer
+{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: #444 solid 10px;
+}
+
+#quiz-start, #quiz-active, #quiz-hs-entry, #quiz-end
 {
     display: none;
 }
@@ -22,39 +36,16 @@ main
 {
     text-align: left;
     margin: 0 auto;
-    width: 400px;
-    display: none;
-}
-
-#quiz-active .quiz-footer
-{
-    text-align: center;
-    padding: 20px;
-}
-
-#quiz-question
-{
-    margin-bottom: 10px;
-}
-
-#quiz-hs-entry
-{
-    display: none;
-}
-
-#quiz-end
-{
-    display: none;
 }
 
 #quiz-end section
 {
     text-align: left;
-    width:150px;
+    width:115px;
     margin: 0 auto;
 }
 
-footer
+[class*="col"]
 {
-    padding: 20px;
+    margin-bottom: 20px;
 }
