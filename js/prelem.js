@@ -3,7 +3,7 @@
 const STORAGE_NAME = "SK_QUIZ_VARS"; // a unique name
 var maxHighScores = 5;
 var maxTimer = 30.00; // in seconds
-var maxTimerSubWrong = -2.5; // in seconds
+var maxTimerSubWrong = 0;//-2.5; // in seconds
 
 // handle to our callback timer function
 // needed to clear the timer interval
@@ -62,6 +62,9 @@ var hsInputElm = document.getElementById("quiz-hs-input");
 var hsFormElm = document.getElementById("quiz-hs-form");
 var statsElm = document.getElementById("quiz-stats");
 var hsElm = document.getElementById("quiz-hs");
+
+var dropZoneQuestions = document.getElementById("dropZoneQuestions");
+var dropZoneAnswers = document.getElementById("dropZoneAnswers");
 
 // i could have done individual object declarations for each question with methods
 // attached to each, but this will do for a small project that won't be continued
