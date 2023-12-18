@@ -3,9 +3,9 @@
 
 <head>
     <!-- title and standard meta usage -->
-    <title>Javascript Quiz by Shane Koehler</title>
+    <title>Quiz Runner by Shane Koehler</title>
     <meta charset="UTF-8" />
-    <meta name="description" content="A Javascript quiz created by Shane Koehler that asks basic questions in random order.  Score is based on speed and accuracy." />
+    <meta name="description" content="A quiz created by Shane Koehler that asks questions in random order.  Score is based on speed and accuracy." />
     <meta name="keywords" content="quiz,javascript,js,test,game" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -24,7 +24,7 @@
     <!-- header -->
     <header class="jumbotron text-center text-white shadow " style="margin:20px auto;width:90%;">
         <section class="rounded p-2 w-75" style="background: rgba(30, 30, 30, 0.6); margin:0 auto 20px auto;">
-            <h1 class="text-light font-weight-bold">Javascript Quiz</h1>
+            <h1 class="text-light font-weight-bold">Quiz Runner</h1>
             <p>A simple quiz game that tests your speed and accuracy!</p>
         </section>
     </header>
@@ -39,12 +39,32 @@
                     <div class="card-title"><h3>Instructions</h3></div>
                     <div class="card-text text-left">
                         <ol>
+                            <li>Drag and drop your questions and answers files in the red squares</li>
                             <li>Start the quiz</li>
                             <li>Answer the question presented then click next</li>
                             <li>Extra time will be taken away if answered incorrectly</li>
                             <li>Enter your initials if made a high score</li>
                             <li>Start again to beat your score.  Yay fun.</li>
                         </ol>
+                    </div>
+
+                    <div class="row">
+                        <div class="col sm-6" >
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title"><h3>Questions</h3></div>
+                                    <div class="card-text"><div id="dropZoneQuestions" style="width: 100%; height: 100px; background-color: red"><p>Drag your questions file into this <i>drop zone</i>.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col sm-6" >
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title"><h3>Answers</h3></div>
+                                    <div class="card-text"><div id="dropZoneAnswers" style="width: 100%; height: 100px; background-color: red"><p>Drag your answers file into this <i>drop zone</i>.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,10 @@ function loadQuizVars()
 // function that saves quizVars into local storage
 function saveQuizVars()
 {
-    localStorage.setItem(STORAGE_NAME, JSON.stringify(quizVars));
+    // remove save as we are going to have a lot of data
+    //var testQuizVars = {};
+    //testQuizVars.highScores = quizVars.highScores;
+    //localStorage.setItem(STORAGE_NAME, JSON.stringify(testQuizVars));
 }
 
 // listener callback for resetting the quiz
@@ -31,7 +34,7 @@ function reset()
 
     // reset vars
     quizVars.status = QUIZ_STATUS.start;
-    quizVars.availQID = "";
+    quizVars.availQID = [];
     quizVars.curQID = "";
     quizVars.correct = 0;
     quizVars.total = 0;
@@ -80,7 +83,7 @@ function nextQuestion()
     {
         // set variable for readability
         var curElement = answerInputElms[i];
-
+        
         // this radio element is checked
         if (curElement.checked) 
         {
@@ -109,7 +112,7 @@ function nextQuestion()
     quizVars.curQID = "";
 
     // check if quiz is over
-    if (!quizVars.availQID)
+    if (!quizVars.availQID.length)
         finishOffQuiz();
 
     // save and reload
@@ -238,8 +241,9 @@ function loadByStatus()
     {
         case QUIZ_STATUS.start:
 
-            // set quiz question total count and save
+            // set quiz question total count, get available QIDs and save
             quizVars.total = quizItems.getAllQIDs().length;
+            quizVars.availQID = quizItems.getAllQIDs();
             saveQuizVars();
 
             // leave switch
@@ -248,18 +252,8 @@ function loadByStatus()
         // setup/display question and answers
         case QUIZ_STATUS.active:
 
-            // check if no current question id
-            if (!quizVars.curQID)
-            {
-                // get available question IDs whether from storage or fresh start
-                quizVars.availQID = (!quizVars.availQID) ? quizItems.getAllQIDs() : quizVars.availQID;
-
-                // get new id out of available ids randomly
-                quizVars.curQID = quizVars.availQID.charAt( _randomInt(quizVars.availQID.length) );
-
-                // remove that id
-                quizVars.availQID = quizVars.availQID.replace(quizVars.curQID, "");
-            }
+            // get new id out of available ids randomly and remove it
+            quizVars.updateCurQID();
 
             // set timer visual
             statusElm.innerHTML = quizVars.timer.toFixed(2);
@@ -278,7 +272,6 @@ function loadByStatus()
             {
                 answerLabelElms[i].innerHTML = curQuizItem.answers[i];
                 answerInputElms[i].checked = false;
-
             }
                 
 

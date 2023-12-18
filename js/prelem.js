@@ -16,7 +16,7 @@ const QUIZ_STATUS = Object.freeze({ start:0, active:1, hsEntry: 2, end:3 });
 let quizVars =
 {
     status: QUIZ_STATUS.start,
-    availQID: "",
+    availQID: [],
     curQID: "",
     correct: 0,
     total: 0,
@@ -24,7 +24,11 @@ let quizVars =
     score: 0,
     place: null,
 
-    highScores: []
+    highScores: [],
+
+    updateCurQID() {
+        this.curQID = this.availQID.splice(Math.floor(Math.random()*this.availQID.length), 1);
+    }
 };
 
 // content element references for quick showing/hiding
@@ -70,7 +74,7 @@ var quizItems =
     // questions
 
     "0": { // ID
-        correctCode: "61", // can be plaintext or coded, see below
+        correctCode: "1", // can be plaintext or coded, see below
         question: "Which of the following is a way to concatenate strings together?",
         answers: [
             "\"This quiz is \" . garbageString . \".\";",
@@ -81,7 +85,7 @@ var quizItems =
     },
 
     "1": {
-        correctCode: "61",
+        correctCode: "0",
         question: "Which of the following methods of the String object returns the characters in a string between two indexes into the string?",
         answers: [
             "substring()",
@@ -92,7 +96,7 @@ var quizItems =
     },
 
     "2": {
-        correctCode: "64",
+        correctCode: "2",
         question: "What is the HTML tag under which one can write the Javascript code?",
         answers: [
             "&lt;javascript&gt;",
@@ -103,7 +107,7 @@ var quizItems =
     },
 
     "3": {
-        correctCode: "65",
+        correctCode: "2",
         question: "What is the correct syntax for referring to an external script called \"geek.js\"?",
         answers: [
             "&lt;script href=\"geek.js\"&gt;",
@@ -114,7 +118,7 @@ var quizItems =
     },
 
     "4": {
-        correctCode: "67",
+        correctCode: "3",
         question: "Which of the following is NOT a valid declcaration type in ES6.",
         answers: [
             "var name = 'John';",
@@ -130,13 +134,17 @@ var quizItems =
     // simply for comparing answers
     compareAnswer(QID, plainAnswer)
     {
+        console.log(QID +" ... "+ plainAnswer);
+        console.log(this[QID]);
         // compare plain answer to question ID that's either coded or
         // even in plain text if dev hasn't coded them yet
-        if (this[QID].correctCode == this.generateCode(QID, plainAnswer)
-            || this[QID].correctCode == plainAnswer
-        ) {
+        //if (this[QID].correctCode == this.generateCode(QID, plainAnswer)
+        //    || this[QID].correctCode == plainAnswer
+        //) {
+        
+        if (this[QID].correctCode == plainAnswer)
             return true;
-        }
+        //}
 
         return false;
     },
@@ -144,10 +152,10 @@ var quizItems =
     // simply returns all valid question IDs
     getAllQIDs()
     {
-        var rtn = "";
+        var rtn = [];
 
         for (var i = 0; this[ i.toString() ] !== undefined; i++)
-            rtn += i.toString();
+            rtn.push(i);
         
         return rtn;
     },
