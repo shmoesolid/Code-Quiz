@@ -8,9 +8,9 @@ hsFormElm.addEventListener("submit", highScore);
 window.addEventListener("beforeunload", saveQuizVars); // makes sure quiz vars save (refresh/close/whatnot)
 
 dropZoneQuestions.addEventListener("ondrop", dropHandler());
-dropZoneQuestions.addEventListener("ondragover", dragOverHandler());
+//dropZoneQuestions.addEventListener("ondragover", dragOverHandler());
 dropZoneAnswers.addEventListener("ondrop", dropHandler());
-dropZoneAnswers.addEventListener("ondragover", dragOverHandler());
+//dropZoneAnswers.addEventListener("ondragover", dragOverHandler());
 
 // do initial load based on global quiz status
 loadByStatus();
