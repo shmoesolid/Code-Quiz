@@ -147,11 +147,16 @@ var quizItems =
     importQuestions(file)
     {
         console.log("import questions");
+
         // need function for going through and converting special chars that will mess up 
         // variable string quotes or html, ie turn " into \", < into &lt; and > into &gt;, etc
         // also maybe replace CR or EOL with <br /> or just make it a <pre> if not already
 
-        // parse out file
+        // read data line by line
+        file.split(/\r?\n/).forEach((line) => {
+            console.log('line: ', line);
+        });
+        
         /* 
         turn this:
 
@@ -182,6 +187,12 @@ var quizItems =
     importAnswers(file)
     {
         console.log("import answers");
+
+        // read data line by line
+        file.split(/\r?\n/).forEach((line) => {
+            console.log('line: ', line);
+        });
+
         // parse out file
         /* 
         turn this:
