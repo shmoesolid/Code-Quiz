@@ -78,6 +78,7 @@ var quizItems =
 
     "0": { // ID
         correctCode: "1", // can be plaintext or coded, see below
+        chosenCode: "",
         question: "Which of the following is a way to concatenate strings together?",
         answers: [
             "\"This quiz is \" . garbageString . \".\";",
@@ -89,6 +90,7 @@ var quizItems =
 
     "1": {
         correctCode: "0",
+        chosenCode: "",
         question: "Which of the following methods of the String object returns the characters in a string between two indexes into the string?",
         answers: [
             "substring()",
@@ -100,6 +102,7 @@ var quizItems =
 
     "2": {
         correctCode: "2",
+        chosenCode: "",
         question: "What is the HTML tag under which one can write the Javascript code?",
         answers: [
             "&lt;javascript&gt;",
@@ -111,6 +114,7 @@ var quizItems =
 
     "3": {
         correctCode: "2",
+        chosenCode: "",
         question: "What is the correct syntax for referring to an external script called \"geek.js\"?",
         answers: [
             "&lt;script href=\"geek.js\"&gt;",
@@ -122,6 +126,7 @@ var quizItems =
 
     "4": {
         correctCode: "3",
+        chosenCode: "",
         question: "Which of the following is NOT a valid declcaration type in ES6.",
         answers: [
             "var name = 'John';",
@@ -156,6 +161,7 @@ var quizItems =
         
         "0": { // the number question in the import will be ignored
             correctCode: "",
+            chosenCode: "",
             question: "Which of the following is NOT a valid declcaration type in ES6.",
             explaination: "",
             answers: [
@@ -182,6 +188,7 @@ var quizItems =
         
         "0": { // the number question in the import will be ignored, will go off order and index
             correctCode: "0", // 0 for a, 1 for b, etc
+            chosenCode: "",
             question: "Which of the following is NOT a valid declcaration type in ES6.",
             explaination: "this is a description with multiline features",
             answers: [
@@ -197,6 +204,9 @@ var quizItems =
     // simply for comparing answers
     compareAnswer(QID, plainAnswer)
     {
+        // set the user chosen answer, we wouln't be comparing otherwise
+        this[QID].chosenCode = plainAnswer;
+
         // compare answers
         if (this[QID].correctCode == plainAnswer)
             return true;
