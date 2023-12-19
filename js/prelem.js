@@ -80,6 +80,7 @@ var quizItems =
         correctCode: "1", // can be plaintext or coded, see below
         chosenCode: "",
         question: "Which of the following is a way to concatenate strings together?",
+        explaination: "because reasons",
         answers: [
             "\"This quiz is \" . garbageString . \".\";",
             "\"This quiz is \" + garbageString + \".\";",
@@ -92,6 +93,7 @@ var quizItems =
         correctCode: "0",
         chosenCode: "",
         question: "Which of the following methods of the String object returns the characters in a string between two indexes into the string?",
+        explaination: "because reasons",
         answers: [
             "substring()",
             "split()",
@@ -104,6 +106,7 @@ var quizItems =
         correctCode: "2",
         chosenCode: "",
         question: "What is the HTML tag under which one can write the Javascript code?",
+        explaination: "because reasons",
         answers: [
             "&lt;javascript&gt;",
             "&lt;scripted&gt;",
@@ -116,6 +119,7 @@ var quizItems =
         correctCode: "2",
         chosenCode: "",
         question: "What is the correct syntax for referring to an external script called \"geek.js\"?",
+        explaination: "because reasons",
         answers: [
             "&lt;script href=\"geek.js\"&gt;",
             "&lt;script name=\"geek.js\"&gt;",
@@ -128,6 +132,7 @@ var quizItems =
         correctCode: "3",
         chosenCode: "",
         question: "Which of the following is NOT a valid declcaration type in ES6.",
+        explaination: "because reasons",
         answers: [
             "var name = 'John';",
             "let name = 'John';",

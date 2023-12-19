@@ -1,0 +1,732 @@
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 1 - Introduction To Networking
+
+1. B. ARPANET
+NSFNET was the follow-on network, DARPA is an organization, and DoDnet
+does not exist.
+
+2. D. The U.S. Department of Defense
+All of the other answers are incorrect.
+
+3. B. Bandwidth
+The network needed to support diverse systems in a reliable manner over diverse
+media. There was not a great need for large amounts of bandwidth.
+
+4. C. Support for applications such as email
+NCP provided support for applications like email; it did not provide any of the
+features in the other answers.
+
+5. B. Layer 3-TCP
+TCP is a Layer 4 protocol. The other answers are incorrect.
+
+6. C. Requests For Comments
+The other answers are incorrect.
+
+7. B. IXPs
+The other answers don’t address the question.
+
+8. D. A single provider could offer SLAs to each location.
+A single provider can offer SLAs because the traffic would be contained entirely
+within its own network; other providers can provide the services in the other
+answers.
+
+9. B. Live video streaming from sports events
+Live streaming video for sports events would clearly fall into the content scope of
+services. The other services are all commonly offered by all service providers.
+
+10. C. Connection-oriented with guarantee of delivery
+“Connection-oriented with guarantee of delivery” describes the basic functions of
+using TCP. The other answers are incorrect.
+
+11. B. TCP
+Originally the functions of both TCP and IP were in a single TCP protocol.
+
+12. B. HTTP, TCP, IP, Ethernet
+The headers are placed in front of each other in order of the protocol stack from
+the highest layer down, so the order would be application, Layer 4 (TCP), Layer 3
+(IP), and then Layer 2 (Ethernet).
+
+13. D. IP and Ethernet only
+A router would remove the Ethernet (Layer 2) header, examine the IP (Layer 3)
+address to determine how to forward the packet, and then replace the Layer 2
+header for the appropriate next-hop interface.
+
+14. C. Remove the entire Layer 2 header and create a new one based on the next-hop
+interface.
+Answer B is incorrect because the next-hop interface might be a different layer
+technology so the router cannot simply replace addresses; it must create a new
+Layer 2 header. The other answers don’t describe the forwarding process correctly.
+
+15. D. IS-IS
+IS-IS is a routing protocol developed by the ISO that is still in use in many provider
+networks. The other answers are either not ISO protocols or are no longer in use.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 2
+
+1. C. SR-6
+This is not a product in the SR line; the SR line contains SR-12, SR-7, and SR-1.
+
+2. B. It supports OSPF, IS-IS, RIP, and BGP.
+The Alcatel-Lucent 7450 ESS is designed primarily as an Ethernet aggregation
+point and so it does not support provider protocols like BGP.
+
+3. D. boot.ldr—Bootstrap image file
+This is the only correct pairing.
+
+4. B. exit all—Logs out of the Alcatel-Lucent 7750 SR/7450 ESS device.
+The exit all command takes you to the root context but does not log you out.
+
+5. A. Audit
+This is not a valid log stream type.
+
+6. D. IOMs plug into the chassis.
+An IOM card supports two MDAs that provide the physical ports for a chassis.
+
+7. C. boot.ldr
+This is the file that contains the bootstrap image, and it is the first file that is read
+upon system startup.
+
+8. B. bof.cfg
+The bof.cfg stores the boot file configuration parameters such as the Ethernet
+management IP, the location of the config file, and the system image file.
+
+9. A. boot.ldr, bof.cfg, system image, config.cfg
+This is the correct order.
+
+10. C. To ensure synchronization with the 5620 SAM
+The persistence option is only needed if the 5620 SAM is used to manage your
+Alcatel-Lucent device.
+
+11. B. no shutdown
+By default, all the ports and cards on an Alcatel-Lucent 7750 SR/7450 ESS are
+down and need to have the no shutdown command used to enable them.
+
+12. C. IOM, MDA, port
+This is the correct provisioning order.
+
+13. C. You must configure a filter for each log-id.
+Configuration of a filter for a log-id is optional.
+
+14. B. admin display-config
+This is used to show the configuration of your Alcatel-Lucent device.
+
+15. B. The list of IOM cards in the chassis
+This value is not stored in the bof.cfg.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 3
+
+1. C. Cell-Relay
+There is no protocol called Cell-Relay; the other answers are all Data Link
+protocols.
+
+2. B. Support the connection of multiple devices on a single link.
+There is an address field, but it is not used as there is no need for addressing on a
+point-to-point link.
+
+3. D. AAL1—High bit rate traffic
+AAL1 is constant bit rate traffic.
+
+4. B. Switched Ethernet
+An Ethernet switch will forward the frame to the correct port based on a destination address in its FDB; all the other technologies broadcast all frames to all
+devices.
+
+5. C. Broadcasts are processed by every host.
+Depending on the switch technology in use, multicast packets might also be
+received by every host, but every host would not process the multicast packets if
+they are not in the multicast group. Every device must strip the Ethernet header
+and examine the contents of the upper layers of a broadcast to determine if the
+packet is intended for it or not. This is a major disadvantage for broadcast traffic.
+
+6. C. PPP is based on the HDLC frame format.
+The HDLC protocol used the fields that PPP does not, and the fields are a legacy
+of this.
+
+7. A. To support latency-sensitive applications like voice traffic
+This is the primary factor behind the small size of the cells. The other answers
+don’t address the core reason for the size of the cells.
+
+8. B. It maps data from upper-layer service classes to ATM cells.
+ATM supports many classes of service, but data from upper-layer protocols must be
+mapped to the 53-byte ATM cells For example, IP datagrams are encapsulated in
+an AAL5 frame, which is then encapsulated in individual ATM cells.
+
+9. D. 802.3 and Ethernet II
+These are the two main types of Ethernet frames. The other answers are incorrect.
+
+10. A. 64
+A value less than 1536 indicates an 802.3 frame.
+
+11. B. Every station on the wire had to be able to “detect” a collision in order to function properly.
+Based on our description of CSMA/CD, it is implied that each station needs to be
+able to determine when other stations are transmitting, which means that each
+station needs to be within a certain distance of other stations so that the electrical
+signals can reach it in no more than a fixed amount of time.
+
+12. C. A 6-byte number in two parts
+The two parts are the vendor OUI and the vendor-chosen hardware address.
+
+13. B. Listen for other stations transmitting; if none, then begin transmitting.
+This is a brief description of the “carrier sense multiple access” part of the CSMA/
+CD protocol.
+
+14. D. The signal results in a collision, and the stations stop and retransmit after waiting a random amount of time.
+This is a brief description of how Ethernet stations retransmit after collision. They
+wait a random amount of time to try to ensure that the same stations don’t transmit at the same time again.
+
+15. C. 1 Gig Ethernet—Fiber cable only
+Gigabit Ethernet can run over copper cabling as well.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 4
+
+1. D. All except the port that received the frame
+This is how switches work until they build up their FDB.
+
+2. D. Switches forward unicast traffic only to a specific destination port.
+This is opposed to hubs that act like a “wire in a box” and forward frames out
+every port. Both hubs and switches forward broadcast traffic out all ports.
+
+3. C. They can protect against a switch failure by calculating multiple paths to
+the root.
+This is a description of STP, not LAG.
+
+4. D. It provides load-sharing capability.
+STP cannot provide load-sharing because only a single path exists between each
+segment and the root bridge to avoid loops.
+
+5. D. A and C but not B
+VLANs do not provide routing between broadcast domains although they do
+create separate broadcast domains.
+
+6. B. Hubs provide collision domain separation.
+Hubs simply forward all frames out all ports and so do not provide collision
+domain separation.
+
+7. B. Uses the same physical link for each source/destination conversation.
+This method is used to ensure that there is no frame reordering as required by the
+802.3ad standard.
+
+8. D. The LAG changes its OSPF cost for the bundle but takes no other action.
+This is because the “dynamic-cost” option is configured on the bundle so that
+each time a link fails, the OSPF cost is updated. No other action is taken because
+the threshold is 2 and there are still four out of six active links functioning.
+
+9. C. Redundant paths can lead to broadcast storms and FDB instability.
+This describes the problem of loops in a switched network, which is the primary
+reason to use STP.
+
+10. A. STP elects a root and selectively blocks higher cost paths to the root from
+each bridge.
+This is an accurate description of the way STP functions to prevent loops.
+
+11. C. The bridge priority unless there is a tie, and then the lowest MAC address
+This is an accurate description of how a root bridge is selected. Answer D is wrong
+because the BID is always used to determine the root bridge (note the unless
+qualifier). In fact, answer C describes what the BID is: bridge priority plus MAC
+address.
+
+12. D. The back-up port is on the same switch as the designated switch.
+The alternate port is on a non-designated switch on the same segment.
+
+13. C. They require a separate physical connection per VLAN for interswitch links.
+This is not true if a VLAN trunk is used between the switches.
+
+14. D. Learning
+In this state, the bridge learns information about MAC addresses but does not yet
+forward frames.
+
+15. C. VLAN stacking
+VLAN stacking allows a provider to stack its own VLAN information in front of
+the customer’s VLAN information to support customers with overlapping VLANs.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 5
+
+1. C. Ethernet switches cannot build forwarding tables.
+Ethernet switches, in fact, do build FDB tables of MAC addresses. The other
+answers are all factors that prevent Ethernet from creating global networks.
+
+2. B. It provides for a logical hierarchy.
+This is one of the main reasons that IP can support global networks—the use of
+hierarchical addressing.
+
+3. D. The current version is IPv5.
+The current version is IPv4, and the next version is IPv6.
+
+4. D. 10.254.1.1
+10.254.1.1 is the only valid host address. The other addresses are either out of supported IP address ranges, are in the broadcast range (255), or are multicast (224).
+
+5. B. 193
+Calculate this as 28
+ + 27
+ + 20
+ = 128 + 64 + 1 = 193.
+
+6. D. None of the above
+This is a Class D or multicast address. You can tell this by examining the first
+octet in binary: 224 = 128 + 64 + 32 = 11100000. The first 3 bits are 1, so this
+indicates that it is a Class D address.
+
+7. C. 200.1.1.254
+The private address ranges are 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16.
+
+8. B. You can identify the host portion of the address without the need for a mask.
+This is true for classful addressing, but not for classless addressing. Using classless
+addressing, you need the subnet mask to determine how many bits are used for the
+subnet and how many for the host.
+
+9. A. 16
+If you need seven hosts per subnet, this means that you need to leave at least 4 bits
+for each subnet because 24
+ – 2 = 14 available hosts. This leaves 4 bits (8 – 4 = 4)
+for the subnet, which means you can have 24
+ = 16 subnets. 3 bits for each subnet is
+not sufficient because two addresses (all zeros and all ones) cannot be used.
+
+10. D. 128
+The trick here is recognizing that if you need 300 hosts per subnet, then you need
+to use more than 8 bits of the IP address for hosts because you can only have 255
+max hosts for an 8-bit octet. If you borrow one of the bits from the third octet,
+this gives you a maximum of 510 hosts, and leaves 7 bits of the third octet for subnets. 27
+ = 128, so you can have 128 subnets.
+
+11. C. /10
+The key here is to remember that 255 means “all 1s,” so you know that the first
+octet has all the bits used and therefore the mask is at least /8. 192 translates into
+the highest 2 bits of the next octet: 27
+ + 26
+ = 128 + 64 + 192, so this means that
+10 bits are used so the subnet mask is /10.
+
+12. B. 2
+The key here is “usable” host addresses. A /30 leaves 2 bits for hosts, which would
+translate into 22
+ = 4. However, the 0 host is the subnet address and the “all 1s”
+host is the broadcast, so those addresses cannot be used. This leaves only two
+usable host addresses.
+
+13. D. subnet 10.1.1.0
+B is not as correct because technically 10.1.1.0 is a subnet of network 10.0.0.0.
+
+14. B. Route aggregation
+CIDR is a technology that implements route aggregation, but the question asks
+what the “concept” is called, and the concept is route aggregation.
+
+15. B. 218
+The key is to determine how many bits are available for subnetting. We know we
+need 31 hosts, so we know we need at least 5 bits because 25
+ = 32. However, we
+lose 2 bits for each subnet for the subnet and broadcast address, so we actually
+need 6 bits for the hosts because using 5 bits would only give us 30 hosts per subnet. Since there are 24 total available bits for subnets on network 10.0.0.0/8,
+24 – 6 host bits = 18 subnet bits, and 218 = 262,144 available subnets.
+
+16. C. 16,382
+If there are four subnets, that means we have used 2 of the available host bits
+because 22
+ = 4. This leaves 16 – 2 = 14 bits for subnets, and 214 – 2 = 16,382.
+
+17. C. 10.15.127.255
+Using a /17 means that we have used 1 bit for the subnet, leaving 7 bits in the
+third octet. The “all 1s” means to set all of those bits to 1 and all the bits in the
+last octet to 1. This means that the last octet is 255 (8 bits set to 1) and the 3rd
+octet is 127 (highest bit is 27
+ = 128, so 255 – 128 = 127).
+
+18. C. subnet 10.10.10.0/16
+This value cannot be used as a subnet address since the host portion is not all
+zeros. The other network addresses given all have the host portion all zeros. Any
+valid address can be used as a host address.
+
+19. B. /20 for the first eight subnets, /24 for the remaining 13
+Because nine subnets are needed, we need to use 4 bits of the host address in the
+third octet because 24
+ = 16 possible subnets (3 bits would only yield eight subnets).
+Then we need 13 more subnets, which means we need to take another 4 bits to
+give us 16 more possible subnets (24
+ = 16). This means we need 16 + 4 = /20 for
+the first eight subnets and 16 + 4 + 4 = /24 for the remaining 13 subnets.
+
+20. D. /19
+We need to determine how many bits are needed to support 4,387 hosts. We know
+that using 8 bits gives us 255 hosts (all 1s for a single octet). If we double this by
+using an additional bit, that gives us 510 hosts; double again gives 1,020; double
+again gives us 2,040; double again gives us 4,080; and double again gives us 8,160.
+We had to double five times to get the desired number of hosts, which means we
+had to take 5 bits + original 8 bits = 13 total bits for hosts from the available 16
+(/16 was the original network). This leaves 3 bits left for subnetting (16 – 13 = 3),
+so /16 + 3 bits = /19 subnet mask.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 6
+
+1. C. Send a “received” message to the originating router.
+IP does not guarantee delivery and does not attempt to inform the transmitting
+router that packets have been received. Acknowledgement and recovery from
+packet drops is performed by higher layer protocols.
+
+2. C. Modern home networks make use of a variety of new services such as Video on
+Demand and IP telephony.
+Traditional home networks used only basic services such as Web browsing and
+email.
+
+3. D. The default gateway
+A default gateway is the IP forwarding device that end-user IP devices send data to
+for routing on the Internet.
+
+4. A. NAT is used for many-to-one translations.
+PAT is used for many-to-one translations, while NAT is used for one-to-one
+translations.
+
+5. B. DHCP
+This is the protocol used to receive a dynamic IP address for a home router.
+
+6. C. A client will send a unicast message to the first DHCP server it receives a
+response from.
+The response is actually a broadcast message so that any other DHCP servers
+know they were not chosen by the requesting device.
+
+7. A. The echo receive ICMP type.
+This is not an ICMP message type.
+
+8. B. They are created by routers that cannot deliver an IP packet to its destination.
+The destination unreachable message is intended to inform the source host that
+the destination address is unavailable.
+
+9. D. The default gateway will issue an ARP request for the MAC address of the
+originating host.
+This is not necessary because the default gateway will cache this data based on
+the information in the original ARP request from the originating host.
+
+10. C. IP filters will automatically permit IP packets by default unless otherwise
+configured.
+The default action for an IP filter is to discard packets.
+
+11. D. Originating host name
+This is because the host name is not part of an IP packet.
+
+12. B. default-action discard
+The command should be default-action drop.
+
+13. C. A and B together
+Both A and B are required to match on the source IP address range and the destination IP address host.
+
+14. B. default-action drop
+default-action drop is not required because the default action, if no other action
+is configured, is to drop packets that do not match any entries in the filter policy.
+
+15. B. The interfaces where the filter is applied
+This is not shown; all the other answers are part of the show filter output.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 7
+
+1. C. RTP
+TCP, UDP, and TP4 are transport protocols.
+
+2. D. Transport layer protocols require additional software be added to your operating system.
+All modern OSes come with a TCP/IP stack that includes the TCP transport
+protocol.
+
+3. B. Connectionless operation
+TCP always requires the establishment of a connection.
+
+4. A. Reliable data transfer
+UDP does not provide reliable data transfer because it does not guarantee delivery.
+
+5. D. RST—Re-sets the sequence numbers for a TCP session
+RST indicates that a TCP connection is unavailable, if, for example, an attempt is
+made to connect to a port that is not available.
+
+6. D. 32
+There are 32 bits in a sequence number.
+
+7. C. SYN and ACK
+Both bit sets are included in the packet.
+
+8. B. FIN
+FIN indicates that one side of an open connection wishes to initiate a close.
+
+9. C. The sender’s congestion window and the receiver’s advertised window size
+The sender will send the lower of the two values.
+
+10. B. Duplicate ACK numbers
+This indicates that the receiver has not received at least one segment and that
+segment must be re-sent.
+
+11. D. 10000
+The sender can never send more than the advertised window size, which is 5000
+(even if its congestion window is higher). If the initial sequence number is 5000,
+then the next sequence number expected by the receiver is always the sequence
+number (5000) + the number of bytes sent (5000) = 10000.
+
+12. B. An application that is sensitive to packet loss
+This is because UDP does not guarantee delivery so it would be better to use TCP
+to avoid packet loss.
+
+13. D. It adds little overhead to the data transfer.
+UDP does not require connection establishment and has a small header, so it adds
+very little overhead to an application.
+
+14. D. 65938
+This is outside the acceptable range of ephemeral ports, 1024–65535.
+
+15. D. UDP cannot be used for bulk file transfers.
+While it is usually better not to use UDP for bulk file transfers, it can be done
+(TFTP uses UDP for bulk file transfers). The other answers are all good reasons
+for DNS to use both TCP and UDP for different functions.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 8
+
+1. A. The destination IP address only
+This is normally the only information that is used to determine how to forward an
+IP packet.
+
+2. D. EGP
+IGP and EGP are the two main types of routing protocols.
+
+3. B. It is used between ASes.
+IGPs are used exclusively inside a single AS.
+
+4. C. Routing table
+Each routing protocol has its own RIB, and the RTM selects routes from each RIB
+to place in the routing table/FIB.
+
+5. D. Distance vector—IS-IS
+IS-IS is a link state routing protocol.
+
+6. B. On links with only a single path to other routers
+This is by far the most common situation to use a static route; you might use them
+in small networks, but even in small networks, routing protocols have an advantage over static routes.
+
+7. D. Distance vector protocols rely on updates only from neighbors.
+Link state protocols flood LSPs throughout the network, and then each router calculates the routes independently so convergence can be very fast. Distance vector
+protocols have to wait for each router to recalculate its own routing table before
+sending an update leading to slower convergence.
+
+8. B. Distance vector does not require extensive processing to build routing tables.
+Link state protocols rely on calculating paths using the Shortest Path First algorithm. If you have older routers with slower CPUs, this can take additional time
+to create the routing table. Distance vector protocols do not perform this sort of
+complex algorithm.
+
+9. C. SPF
+The Shortest Path First algorithm is used by link state routing protocols.
+
+10. B. A default route
+While technically this is a type of static route, it is more accurate to call it a
+default route. This is the type of route most likely to be found on stub networks.
+
+11. B. The control plane
+This is the function that is used to build routing tables.
+
+12. D. The link state database
+This is where link state information is stored to build the routing table.
+
+13. C. It enters the lowest preference value in the routing table.
+The RTM prefers the routing protocol with the lowest preference value.
+
+14. A. Each router has a common view of the network.
+Each router receives the same LSPs and should have the same link state database.
+It then builds a path to each network using the SPF algorithm to create its routing
+table.
+
+15. B. It sends its entire routing table.
+This is how distance vector protocols update neighbor routers.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 9
+
+1. C. Using Hello advertisements
+OSPF sends Hello packets to the 224.0.0.5 multicast IP address to discover other
+OSPF routers.
+
+2. D. It uses a hop count–based metric.
+OSPF uses a cost value on each interface that is based on the bandwidth of the
+link; it does not use a hop count.
+
+3. D. System interface
+It is recommended that you use the system interface as the router ID.
+
+4. B. To uniquely identify an OSPF router
+Every OSPF router must have a router ID to uniquely identify it for purposes of
+building the SPF tree and identifying its LSA updates.
+
+5. A. Every 30 minutes
+LSA updates are sent every 30 minutes in order to refresh the LSA. They are sent
+regardless of whether changes have occurred.
+
+6. B. The routers are on a common network segment and have exchanged database
+information.
+Routers that have shared database information are referred to as adjacent. Not all
+neighbor OSPF routers become adjacent.
+
+7. C. They will automatically become adjacent provided certain OSPF configuration
+values match.
+The area ID and Hello and dead timers must match in the Hello packets.
+
+8. B. The priority
+The priority value is only applicable on OSPF broadcast networks.
+
+9. B. The OSPF MTU
+This is based on the interface MTU and must match on each router.
+
+10. D. show router ospf database
+This command displays the LSAs that have been received from other OSPF
+routers.
+
+11. B. The router LSA
+The router LSA carries the local topology information for each router in the
+network.
+
+12. C. Drop the LSA and send an acknowledgment
+The router already has the information so it will drop the LSA, but all LSAs must
+be acknowledged.
+
+13. C. It is run only on the router that originates an LSA update.
+Whenever an LSA update is flooded throughout the network, all routers must
+rerun the SPF algorithm.
+
+14. C. ExStart, Exchange, Loading, Full
+This is the correct order.
+
+15. D. 622-Mbps link = 16
+(100 Gbps)/(622 Mbps) = 160, not 16.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 10
+
+1. B. Distribute routing information between ASes
+BPG is an EGP protocol so it is used between different ASes.
+
+2. D. The AS usually contains routers under the control of different administrative
+groups.
+An AS is usually under the control of a single group.
+
+3. D. System interface
+This is the preferred interface for internal BGP sessions because iBGP peers are
+often not directly connected to each other.
+
+4. C. They can be in the same or different AS.
+You can have both internal BGP and external BGP sessions.
+
+5. C. TCP on a fixed port
+BGP uses TCP port 179.
+
+6. A. To ensure that routers inside an AS have a common view of networks outside
+the AS
+This is to ensure that routers inside the AS choose the correct exit point for
+routes in other ASes.
+
+7. B. The shortest AS path
+BGP uses AS path information to choose the best route to each destination.
+
+8. C. An update message
+The BGP update message contains the NLRI, or route information, exchanged by
+BGP peers.
+
+9. D. The AS number is associated with each peer statement.
+You must configure an AS number for each neighbor, and this allows you to determine if the peer is internal or external. Internal peers have the same AS number.
+
+10. B. show router bgp summary
+This command is used to see the state of your BGP information. There is no
+show router bgp status command as there is for other routing protocols.
+
+11. C. Send a withdraw message
+BGP will actively send withdraw messages to its peers to remove previously advertised routes that are no longer available.
+
+12. B. An enterprise with multiple connections to the same ISP
+In such a situation, the enterprise can use equal cost default routes to load balance
+across the multiple links; there is no need to complicate the routing with BGP.
+
+13. D. AS-path, origin, and next-hop
+These attributes are included with every BGP network update for each destination.
+
+14. A. It is the single exit point for an AS.
+If there is only one exit point from an AS, there is little reason for a BGP router to
+receive full Internet routing tables.
+
+15. D. Route re-distribution provides for greater policy control.
+BGP provides for much greater policy control than simple IGP route
+re-distribution.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 11
+
+1. B. It is responsible for adding and removing labels.
+Answer A is a CE, and answer C is a P. D is partially correct, but B is the more
+accurate answer.
+
+2. B. It is specific to a single service.
+ SDPs are not specific to a single service and can support multiple services.
+
+3. D. Any network that includes encryption
+Encryption can be a part of a VPN, but the correct description of a VPN should
+include a way to privatize communications between user communities. The other
+answers speak to this, but answer D does not.
+
+4. C. It is the only method for distributing labels in an MPLS network.
+ LDP is only one method of distributing labels; RSVP can be used as well as other
+protocols.
+
+5. C. Label distribution protocol—Series of labels and next-hop interfaces
+This description is the Label Switched Path.
+
+6. C. LDP
+LDP is the most common label distribution protocol.
+
+7. B. VPNM
+VPNM is not a type of VPN.
+
+8. C. VPWS
+VPWS is a VPN that emulates a point-to-point service between two destinations.
+
+9. B. VPLS
+VPLS is a VPN that must maintain a table of MAC addresses.
+
+10. D. None of the above
+None of the VPN services provided by an MPLS network require encryption.
+
+11. B. VPRN
+VPRN is a VPN that appears to a customer as a private routed network.
+
+12. D. P
+P routers swap labels and forward them to other P or PE routers.
+
+13. D. None of the above
+PE, LSR, and LER routers can all understand labels. The router is most likely a CE
+router, which is not one of the choices.
+
+14. D. All of the above
+Transparency of the MPLS features to a CE device has all of the benefits listed.
+
+15. B. LDP uses IGP next-hop information.
+LDP and IGPs do not re-distribute information directly or compete with each
+other for paths as they perform completely different functions, although LDP does
+use the information from IGP to populate the next-hop interfaces for labels
+
+

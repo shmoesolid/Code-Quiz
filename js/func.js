@@ -274,7 +274,6 @@ function loadByStatus()
                 answerInputElms[i].checked = false;
             }
                 
-
             // leave switch
             break;
         
@@ -296,12 +295,16 @@ function loadByStatus()
             hsElm.innerHTML = toAdd;
 
             // build stats string
-            toAdd = "Your Score: " + quizVars.score;
-            toAdd += "<br />Correct: " +quizVars.correct +" / "+ quizVars.total;
+            toAdd = "Game Score: " + quizVars.score;
+            toAdd += "<br />Actual Score: " + ((quizVars.correct/quizVars.total) * 100).toFixed(1) + "%";
+            toAdd += "<br />Correct: " + quizVars.correct +" / "+ quizVars.total;
             toAdd += "<br />Time Left: " + quizVars.timer.toFixed(2);
 
             // set string to stats element
             statsElm.innerHTML = toAdd;
+
+            // display all the questions with highlighted correct/wrong answers and explainations of the correct answer
+            // .. do stuff
     }
 
     // toggle our div display for where we are at

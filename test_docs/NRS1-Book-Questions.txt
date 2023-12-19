@@ -1,0 +1,1201 @@
+Pre-Assessment Questions
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 1
+
+1. The original network that ultimately became the Internet was called ______.
+A. NSFNET
+B. ARPANET
+C. DoDnet
+D. DARPA
+
+2. The primary organization behind the development of the original Internet
+was ______.
+A. IBM
+B. Digital Equipment Corporation (DEC)
+C. Stanford University
+D. U.S. Department of Defense
+
+3. Which of the following was not a primary design concern during the development
+of the original Internet?
+A. Reliability
+B. Bandwidth
+C. Interoperability
+D. Support for diverse network mediums
+
+4. Which of the following was not a reason TCP was a superior transport protocol
+to NCP?
+A. Support for global addressing
+B. Support for end-to-end checksums
+C. Support for applications such as email
+D. Support for fragmentation and reassembly
+
+5. Which of the following OSI layers is not paired with the correct implementation?
+A. Layer 7—Email
+B. Layer 3—TCP
+C. Layer 4—UDP
+D. Layer 2—PPP
+
+6. Part of the growth of the ARPANET was driven by the ability of anyone to create
+and disseminate information about potential protocols and applications in a particular kind of document. These documents are known as ______.
+A. Requests For Information
+B. Protocol Revisions
+C. Requests For Comments
+D. Requests For Configurations
+
+7. ISPs connect to each other at well-defined network locations to exchange information. These connection points are known as ______.
+A. ISPs
+B. IXPs
+C. BGPs
+D. POPs
+
+8. A company that has locations throughout the country can obtain service at each
+location from a Tier 1, Tier 2, or Tier 3 provider. What is one reason a company
+might choose to connect all locations to a Tier 1 provider despite the higher costs
+involved?
+A. Sites at different tiers cannot communicate.
+B. Tier 3 providers don’t use TCP/IP.
+C. Only Tier 1 providers provide content.
+D. A single provider could offer SLAs to each location.
+
+9. Which of the following services would likely be offered by a content provider but
+not a service provider?
+A. Standard dial-up service
+B. Live video streaming from sports events
+C. Email service
+D. Basic web services
+
+10. Which of the following accurately describes the TCP protocol?
+A. Connectionless with no guarantee of delivery
+B. Connectionless with guarantee of delivery
+C. Connection-oriented with guarantee of delivery
+D. None of the above
+
+11. Originally the IP protocol functions were performed by ______.
+A. Ethernet
+B. TCP
+C. NCP
+D. ALOHANET
+
+12. When an HTTP packet needs to be forwarded over the Internet, which of the
+following accurately describes the order of the headers as they would be placed
+in front of each other in the packet (assume that the originating device is on an
+Ethernet network)?
+A. HTTP, IP, TCP, Ethernet
+B. HTTP, TCP, IP, Ethernet
+C. HTTP, UDP, IP, Ethernet
+D. HTTP, IP, Ethernet
+
+13. A router processing the packet described in Question 12 would need to examine
+and/or manipulate which headers?
+A. Ethernet only
+B. IP only
+C. TCP and IP only
+D. IP and Ethernet only
+
+14. What would a router processing the packet described in Question 12 do with the
+Layer 2 header of the incoming packet?
+A. Remove the source Layer 2 address, add its own, and forward the packet.
+B. Remove the Layer 2 addresses and replace them with new addresses.
+C. Remove the entire Layer 2 header and create a new one based on the next-hop
+interface.
+D. Leave the original Layer 2 header but forward the packet based on the destination address.
+
+15. Most of the OSI-created protocols are no longer in use, although a few still provide some critically important functions. Which of the following describes an OSI
+protocol that is still in use?
+A. OSPF
+B. LDP
+C. TP0
+D. IS-IS
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 2
+
+1. Which of the following is not a product in the Alcatel-Lucent 7750 SR/7450 ESS
+family?
+A. SR-12
+B. ESS-7
+C. SR-6
+D. ESS-1
+
+2. Which of the following statements is false regarding the Alcatel-Lucent 7450 ESS
+series?
+A. It supports multiple chassis types.
+B. It supports OSFP, IS-IS, RIP, and BGP.
+C. It is used primarily for Ethernet aggregation.
+D. It can be managed via a console port or a dedicated Ethernet port on the
+SF/CPM.
+
+3. Which of the following descriptions is correct?
+A. bof.cfg—7750/7450 configuration file
+B. cpm.tim—IOM image file
+C. config.cfg—Back-up configuration file
+D. boot.ldr—Bootstrap image file
+
+4. Which of the following commands is not correctly described?
+A. shutdown—This command is used to disable an interface or protocol.
+B. exit all—Logs out of the Alcatel-Lucent 7750 SR/7450 ESS device.
+C. ?—Lists all commands in the current context.
+D. [TAB]—This command is used for assistance with command completion.
+
+5. Which of the following is not a log stream type?
+A. Audit
+B. Change
+C. Main
+D. Security
+
+6. Which of the following descriptions of hardware for the Alcatel-Lucent 7750
+SR/7450 ESS is correct?
+A. IOMs plug into MDAs.
+B. MDAs plug into SFPs.
+C. SF/CPMs plug into IOMs.
+D. IOMs plug into the chassis.
+
+7. What file contains the system bootstrap image?
+A. boot.cfg
+B. image.ldr
+C. boot.ldr
+D. bof.cfg
+
+8. The SF/CPM card has its own Ethernet interface for out-of-band management. This
+interface has its own IP address and default route. Where is this information stored?
+A. boot.ldf
+B. bof.cfg
+C. config.cfg
+D. cpm.tim
+
+9. Which of the following correctly lists the order in which files are read by the
+Alcatel-Lucent 7750 SR/7450 ESS upon bootup?
+A. boot.ldr, bof.cfg, system image, config.cfg
+B. system image, boot.ldr, config.cfg, bof.cfg
+C. boot.ldr, system image, bof.cfg, config.cfg
+D. boot.ldr, bof.cfg, config.cfg, system image
+
+10. During the boot process, an Alcatel-Lucent 7750 SR/7450 ESS checks to see if
+persistence is enabled. What is the purpose of persistence?
+A. To ensure that the system saves routing table information when it reboots
+B. To ensure that changes to the bof.cfg are saved
+C. To ensure synchronization with the 5620 SAM
+D. To ensure that config changes are stored in the config.cfg
+
+11. What command would you use to enable an interface the first time you initialized
+an Alcatel-Lucent 7750 SR/7450 ESS?
+A. enable
+B. no shutdown
+C. interface enable
+D. interface on
+
+12. Which of the following is the correct provisioning order you should follow when
+configuring an Alcatel-Lucent 7750 SR/7450 ESS for the first time?
+A. IOM, port, MDA
+B. Port, MDA, IOM
+C. IOM, MDA, port
+D. MDA, port, IOM
+
+13. Which of the following is false regarding the logging mechanisms in the AlcatelLucent 7750 SR/7450 ESS?
+A. Log-ids 99 and 100 are reserved for system usage.
+B. You must configure at least one input stream for a log-id.
+C. You must configure a filter for each log-id.
+D. You must configure the destination for the events from the log-id.
+
+14. What command would you use to display the configuration of your Alcatel-Lucent
+7750 SR/7450 ESS?
+A. show config
+B. admin display-config
+C. display config
+D. show admin config
+
+15. Which of the following values is not stored in the bof.cfg?
+A. The location of the primary boot image
+B. The list of IOM cards in the chassis
+C. The persist value
+D. The location of the primary config file
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 3
+
+1. Which of the following is not a data link layer (OSI Layer 2) protocol?
+A. Ethernet
+B. ATM
+C. Cell-Relay
+D. PPP
+
+2. Which of the following is not a function of PPP?
+A. Provide support for multiple upper-layer protocols.
+B. Support the connection of multiple devices on a single link.
+C. Support authentication.
+D. Support data integrity via a CRC on frame contents.
+
+3. Which of the following ATM AAL types is associated with an incorrect
+description?
+A. AAL3/4—Connection-oriented service
+B. AAL5—Connectionless service
+C. AAL2—Variable bit rate traffic
+D. AAL1—High bit rate traffic
+
+4. Which of the following technologies ensures that a unicast packet is visible only
+to the device with the specific destination address?
+A. Ethernet
+B. Switched Ethernet
+C. Satellite
+D. Wireless LAN
+
+5. The advantage of using multicast packets instead of broadcast packets is:
+A. Broadcasts are received by every host.
+B. Multicast is newer technology.
+C. Broadcasts are processed by every host.
+D. Multicast provides multiple addresses for flexibility.
+
+6. A PPP frame has several fields that are not used, like addressing. Why do these
+fields exist in the frame?
+A. They are reserved for future use.
+B. They are legacy fields from older versions of PPP headers.
+C. PPP is based on the HDLC frame format.
+D. PPP can be adapted for use on multi-point networks and might need the fields.
+
+7. ATM uses 53-byte cells, which is quite a bit smaller than the maximum Ethernet
+frame. What is the purpose of having such a small cell size?
+A. To support latency-sensitive applications like voice traffic
+B. To provide less overhead on ATM switches
+C. To support the use of multiple classes of service
+D. To provide the ability to do switching in hardware
+
+8. What is the purpose of the ATM Adaptation Layer?
+A. It determines the amount of data in the cell.
+B. It maps data from upper-layer service classes to ATM cells.
+C. It adapts Ethernet frames to ATM cells.
+D. It wraps a header around the ATM cell.
+
+9. What are the two main types of Ethernet frames?
+A. Thinnet and Thicknet
+B. 10baseT and 100baseT
+C. DIX Ethernet and Ethernet II
+D. 802.3 and Ethernet II
+
+10. Which of the following values for the Ethertype/length fields indicates an 802.3
+frame (numbers are in decimal)?
+A. 64
+B. 1540
+C. 2048
+D. 9000
+
+11. The original Thicknet standard had a maximum cable length as well as a minimum distance for stations to tap into the cable. Based on the description of
+CSMA/CD, what is the most likely reason for these distance requirements?
+A. A signal might be too weak to travel farther than the maximum distance.
+B. Every station on the wire had to be able to “detect” a collision in order to
+function properly.
+C. Too many taps in the cable would weaken the wire.
+D. Thicknet cable came in fixed lengths.
+
+12. An Ethernet MAC address consists of ______.
+A. A 4-byte number in four parts
+B. A 4-byte number in two parts
+C. A 6-byte number in two parts
+D. A 6-byte number in four parts
+
+13. When an Ethernet station wants to transmit information, the process it follows
+is ______.
+A. Just start transmitting.
+B. Listen for other stations transmitting; if none, then begin transmitting.
+C. Transmit whenever it receives the token.
+D. Issue a transmit request, and transmit when given authorization to do so.
+
+14. What happens when two or more Ethernet stations attempt to transmit at the
+same time?
+A. This is impossible on half-duplex.
+B. The signal results in a collision, the stations stop, and the stations all wait the
+same amount of time to retransmit.
+C. The signal results in a collision, and the stations retransmit based on a configured priority.
+D. The signal results in a collision, and the stations stop and retransmit after
+waiting a random amount of time.
+
+15. Which of the following Ethernet standards is not matched correctly?
+A. 10 Mb Ethernet—Fiber or copper cable
+B. 100 Mb Ethernet—Fiber or copper cable
+C. 1 Gig Ethernet—Fiber cable only
+D. All of the above are correct.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 4
+
+1. When a frame with an unknown destination MAC address enters a switch, the
+switch will forward it out which ports?
+A. None
+B. All
+C. All unicast ports
+D. All except the port that received the frame
+
+2. The primary difference in the way Ethernet hubs and Ethernet switches handle
+traffic is ______.
+A. Hubs forward broadcast traffic out every port, switches do not.
+B. Switches eliminate the need for thicknet cabling.
+C. Switches support multiple physical connections to hosts.
+D. Switches forward unicast traffic only to a specific destination port.
+
+3. Which of the following is not true about Link Aggregation Groups?
+A. They protect against single or multiple link failures.
+B. They can contain up to eight physical links.
+C. They can protect against a switch failure by calculating multiple paths to
+the root.
+D. They can be configured to enter a down state if a certain number of links in
+the bundle fail.
+
+4. Which of the following is not true of the STP protocol?
+A. It calculates a root bridge.
+B. It uses a cost value on each port to determine the path to the root bridge.
+C. It ensures a loop-free topology.
+D. It provides load-sharing capability.
+
+5. The advantage of using VLANs is ______.
+A. They can increase the security of your network.
+B. They can interconnect multiple broadcast domains.
+C. They can limit the amount of broadcast traffic between groups of devices.
+D. A and C but not B
+
+6. Which of the following statements is false?
+A. Routers provide broadcast domain separation.
+B. Hubs provide collision domain separation.
+C. VLANs provide broadcast domain separation.
+D. Switches provide collision domain separation.
+
+7. The method that LAGs use to provide load balancing is best described as:
+A. Aggregates all source/destination conversations into a single conversation
+equally across all links
+B. Uses the same physical link for each source/destination conversation
+C. Statistically balances conversations based on the source MAC address
+D. Distributes egress frames equally across all links in the bundle
+
+8. Given the following code:
+Config> lag 1
+Config>lag# description “LAG from PE1 to PE2”
+Config>lag# port 1/1/1 1/1/2 1/1/3 1/1/4 1/1/5 1/1/6
+Config>lag# port-threshold 2 action down
+Config>lag# dynamic-cost
+Config>lag# no shutdown
+Which answer correctly describes what happens when Ports 1/1/5 and 1/1/6 fail?
+A. Nothing because the port threshold of 2 active links has not been reached
+B. The LAG begins using equal costing across all links because of the dynamiccost parameter.
+C. The LAG updates its BPDUs and recalculates STP.
+D. The LAG changes its OSPF cost for the bundle but takes no other action.
+
+9. What is the primary reason that Ethernet switched networks require STP?
+A. STP provides for link backup between switches.
+B. A loop-free topology is more efficient.
+C. Redundant paths can lead to broadcast storms and FDB instability.
+D. STP updates the OSPF routing protocol cost upon link failure.
+
+10. The mechanism that STP uses to prevent loops in an Ethernet switched network
+is ______.
+A. STP elects a root and selectively blocks higher cost paths to the root from
+each bridge.
+B. STP blocks ports on all bridges that are not the root bridge.
+C. STP proactively changes all paths to the root bridge so that they are equal cost.
+D. STP uses BPDUs to set up a virtual path between each source and destination pair.
+
+11. What determines how the root bridge is elected?
+A. The bridge priority
+B. The MAC address of the lowest switch port
+C. The bridge priority unless there is a tie, and then the lowest MAC address
+D. The BID unless there are multiple bridge priorities that are equal
+
+12. What distinguishes an alternate port from a back-up port in STP?
+A. The alternate port has a higher path to the root.
+B. The back-up port has a lower priority.
+C. The back-up port is used only when the alternate port fails.
+D. The back-up port is on the same switch as the designated switch.
+
+13. Which of the following is false regarding VLANs?
+A. They provide for broadcast domain separation.
+B. A single VLAN can exist on multiple switches.
+C. They require a separate physical connection per VLAN for interswitch links.
+D. They use a 12-bit VLAN ID to identify each VLAN.
+
+14. Which STP port state is characterized by the port accepting and recording MAC
+address information, but not forwarding any frames out the port?
+A. Blocking
+B. Forwarding
+C. Listening
+D. Learning
+
+15. The technology that allows multiple customers with the same VLANs to use the
+same provider backbone for their Ethernet traffic is known as ______.
+A. VLAN trunking
+B. VLAN tunneling
+C. VLAN stacking
+D. IEEE 802.1p
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 5
+
+1. Which of the following is not a reason networks built on Ethernet alone cannot
+scale to a global?
+A. Excessive broadcasts would make the network unusable.
+B. Ethernet lacks hierarchical addressing.
+C. Ethernet switches cannot build forwarding tables.
+D. Ethernet cables can only be of a limited length.
+
+2. Which of the following is true about Layer 3 addressing?
+A. It is embedded in the device’s firmware.
+B. It provides for a logical hierarchy.
+C. It allows for duplicate addresses on the Internet.
+D. Addresses are not required to be registered if they are used on the Internet.
+
+3. Which of the following is not true about an IP packet?
+A. The TTL field ensures that IP packets have a limited lifetime.
+B. The maximum size is 65,535 octets.
+C. The total length field includes the IP header.
+D. The current version is IPv5.
+
+4. Which of the following is a valid host IP address?
+A. 192.168.300.4
+B. 255.70.1.1
+C. 224.0.0.1
+D. 10.254.1.1
+
+5. An IP address has a first octet represented in binary as 11000001; the equivalent
+in decimal is ______.
+A. 190
+B. 193
+C. 192
+D. 11,000,001
+
+6. The address 224.100.1.1 under traditional classful addressing would be ______.
+A. Class A
+B. Class B
+C. Class C
+D. None of the above
+
+7. Which of the following is not a private address?
+A. 172.18.20.4
+B. 10.0.1.1
+C. 200.1.1.254
+D. 192.168.0.1
+
+8. Which of the following is not a reason that subnetting is superior to class-based
+addressing?
+A. It reduces the Internet routing table size.
+B. You can identify the host portion of the address without the need for a mask.
+C. It creates greater internal address flexibility.
+D. It allows for more efficient use of address space.
+
+9. Given a network address of 192.168.100.0/24, what is the maximum number of
+subnets you can create if each subnet must support at least seven hosts?
+A. 16
+B. 32
+C. 4
+D. 8
+
+10. If your network address is 10.1.0.0/16 and you have subnetworks that all support at
+least 300 hosts, how many subnets do you have?
+A. 255
+B. 64
+C. 100
+D. 128
+
+11. Which of the following is the correct representation of mask 255.192.0.0?
+A. /8
+B. /11
+C. /10
+D. /16
+
+12. A network with a /30 mask allows you to have how many usable host addresses?
+A. 4
+B. 2
+C. 6
+D. 0
+
+13. Given the address 10.1.1.0/24, the most correct description of 10.1.1.0 is ______.
+A. Host 0 on the 10.1.1.0 subnet
+B. Network 10.1.1.0
+C. Illegal because 10.0.0.0 is a Class A
+D. Subnet 10.1.1.0
+
+14. The concept of allowing a single route entry to represent many network addresses
+is known as ______.
+A. CIDR
+B. Route aggregation
+C. VLSM
+D. Classless addressing
+
+15. How many subnets can be created from network 10.0.0.0/8 if each subnet must
+support at least 31 hosts?
+A. 216
+B. 218
+C. 219
+D. 224
+
+16. Given network 175.100.0.0/16, if you create four subnets, how many addresses are
+available on each subnet?
+A. 16,384
+B. 4,096
+C. 16,382
+D. 4,094
+
+17. What is the correct “all hosts” broadcast address for subnet 10.15.0.0/17?
+A. 10.15.255.255
+B. 10.15.0.255
+C. 10.15.127.255
+D. 10.15.128.255
+
+18. Which of the following is not allowed?
+A. subnet 10.0.0.0/16
+B. subnet 10.255.0.0/16
+C. subnet 10.10.10.0/16
+D. host 10.10.10.0/32
+
+19. Given network 135.100.0.0/16, you need nine subnets, and of these nine, one subnet needs to be split into 13 additional subnets. Choose the most likely masks you
+would create for this.
+A. /20 for the first eight subnets, /23 for the remaining 13
+B. /20 for the first eight subnets, /24 for the remaining 13
+C. /24 for all subnets
+D. /19 for the first eight subnets, /24 for the remaining 13
+
+20. Given network 176.200.0.0/16 and a subnet that supports 4,387 hosts, what is the
+most likely mask for the subnet?
+A. /20
+B. /17
+C. /21
+D. /19
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 6
+
+1. Which of the following is a function not performed by a router when forwarding
+an IP packet?
+A. Verify the IP header checksum.
+B. Decrement the TTL and ensure that it is not zero.
+C. Send a “received” message to the originating router.
+D. Remove the existing L2 header and creates a new L2 header before forwarding
+the IP packet to its next destination.
+
+2. Which of the following highlights the differences between a traditional home user
+network and the modern home user network?
+A. Traditional home networks did not use routers.
+B. Modern home networks can use wireless access points.
+C. Modern home networks make use of a variety of new services such as Video
+on Demand and IP telephony.
+D. Traditional home networks did not rely on the IP protocol.
+
+3. In a typical home network, when a PC needs to send an IP packet to a destination
+on the Internet, it first sends the packet to ______.
+A. The designated router
+B. The cable modem
+C. The router indicated in its BGP table
+D. The default gateway
+
+4. Which of the following statements regarding NAT is false?
+A. NAT is used for many-to-one translations.
+B. NAT is intended to alleviate the need for every home user device to have a
+public IP address.
+C. NAT typically makes use of private IP addressing.
+D. A NAT router maintains a translation database to perform the address
+conversions.
+
+5. The process by which a home user’s router requests and receives a public IP
+address from its service provider is known as ______.
+A. ARP
+B. DHCP
+C. ICMP
+D. OSPF
+
+6. Which of the following is false about the DHCP process?
+A. The client broadcasts a discover message looking for DHCP servers.
+B. All DHCP servers will broadcast an offer message.
+C. A client will send a unicast accept message to the first DHCP server it
+receives a response from.
+D. All of the above statements are true.
+
+7. The ping application relies on two common ICMP message types. Which answer
+is not one of these types?
+A. The echo receive ICMP type.
+B. The echo request ICMP type.
+C. The echo reply ICMP type.
+D. None of the above are ICMP message types used by ping.
+
+8. Which of the following is true regarding ICMP destination unreachable messages?
+A. They are sent after failure to receive an Ethernet ACK.
+B. They are created by routers that cannot deliver an IP packet to its destination.
+C. They rely on the use of ICMP echo replies.
+D. They are originated by hosts that are about to reboot.
+
+9. Which of the following is not usually involved in the ARP process when a host
+needs to send an IP packet to another host not on its own IP subnet?
+A. The host needs to determine based on its mask that the destination host is
+not on its local subnet.
+B. The host will issue an ARP request for the MAC address of its default gateway
+if it is not in its ARP cache.
+C. The default gateway will determine if it needs to issue an ARP request for the
+destination host .
+D. The default gateway will issue an ARP request for the MAC address of the
+originating host .
+
+10. Which of the following is false regarding IP filters?
+A. IP filters are not required on a router interface.
+B. IP filters can filter on both IP addresses and upper-layer protocol port
+numbers.
+C. IP filters will automatically permit IP packets by default unless otherwise
+configured.
+D. Only one ingress and one egress filter can be applied per interface.
+
+11. Which of the following is not a match criteria that can be used with IP filters?
+A. Source or destination IP address
+B. Source or destination port number
+C. ICMP message type
+D. Originating host name
+
+12. Which of the following is not a valid IP filter command?
+A. ip-filter 10 create
+B. default-action discard
+C. entry 1 create
+D. match dst-ip 10.5.1.0/24
+
+13. Which of the following IP filter entries would match packets from network
+11.1.1.0/24 to host 5.1.1.1?
+A. match src-ip 11.1.1.0/24
+B. match dst-ip 5.1.1.1/32
+C. A and B together
+D. None of the above
+
+14. You are creating a filter to permit packets to destination IP address 192.168.1.1/32.
+You want all other packets to be dropped. Which of the following commands is
+not required to support this policy?
+A. ip-filter 1 create
+B. default-action drop
+C. entry 1 create
+D. match dst-ip 192.168.1.1/32
+
+15. Which of the following is not displayed with the use of the show filter command?
+A. The filter’s default action
+B. The interfaces where the filter is applied
+C. The number of ingress and egress matches
+D. The entries in the filter
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 7
+
+1. Which of the following is not a transport layer protocol?
+A. TP4
+B. TCP
+C. RTP
+D. UDP
+
+2. Which of the following statements about transport layer protocols is false?
+A. Most Internet applications use a transport layer protocol.
+B. Transport layer protocols can provide both reliable and unreliable services.
+C. Transport layer protocols provide end-to-end services for applications.
+D. Transport layer protocols require additional software be added to your operating system.
+
+3. Which of the following is not a characteristic of the TCP protocol?
+A. Reliable data transfer
+B. Connectionless operation
+C. Flow control supported
+D. Full-duplex operation
+
+4. Which of the following is not a characteristic of the UDP protocol?
+A. Reliable data transfer
+B. Connectionless operation
+C. No flow control
+D. Appropriate for real-time traffic
+
+5. Which of the following TCP flags is not matched with the correct definition?
+A. SYN—Indicates the start of a TCP connection.
+B. ACK—Acknowledges that a TCP segment has been received.
+C. FIN—Indicates the closing of a TCP session.
+D. RST—Re-sets the sequence numbers for a TCP session.
+
+6. A TCP sequence or acknowledgment number consists of ______ bits.
+A. 30
+B. 64
+C. 24
+D. 32
+
+7. After a client initiates a connection request to a server with the SYN bit set, the
+server usually responds with a packet that has the ______ bit set.
+A. SYN
+B. ACK
+C. SYN and ACK
+D. SYN, ACK, and URG
+
+8. Which of the following TCP bits is set to indicate that an application wishes to
+close an open connection?
+A. RST
+B. FIN
+C. URG
+D. ACK
+
+9. When operating in slow start mode, which of the following describes the mechanisms to throttle the amount of data sent?
+A. The receiver’s advertised window size
+B. The sender’s congestion window and the sender’s advertised window size
+C. The sender’s congestion window and the receiver’s advertised window size
+D. The maximum segment size and the URG pointer
+
+10. Which of the following are possible mechanisms by which a TCP sending process could recognize that packets it sent to a receiver had been dropped by the
+network?
+A. An RSND bit from the receiving TCP process
+B. Duplicate ACK numbers
+C. An advertised window size of 0
+D. An ICMP source quench message
+
+11. Given the values MSS=1000 bytes, cwnd value=6, window size=5000, and sender’s
+SN=5000, what will be the ACK number from the receiving station after the
+sender sends its next set of segments to the receiving station?
+A. 6000
+B. 11001
+C. 11000
+D. 10000
+
+12. Which of the following types of applications would be least likely to use the UDP
+protocol?
+A. A “request-response” application
+B. An application that is sensitive to packet loss
+C. An application that is sensitive to delay
+D. A real-time application
+
+13. TCP provides many advanced features missing from UDP. Which of the following
+is an advantage that UDP has over TCP?
+A. It provides reliable data transfer.
+B. It can recover gracefully from packet loss.
+C. It reacts to network congestion.
+D. It adds little overhead to the data transfer.
+
+14. Which of the following is least likely to be used as an ephemeral port?
+A. 1025
+B. 53212
+C. 1487
+D. 65938
+
+15. DNS is a unique protocol in terms of its transport selection because simple name
+lookups use UDP, while “zone transfers” that transfer a large amount of name resolution information from one DNS server to another use TCP. What is the least
+likely reason for using this approach?
+A. Name lookups are simple request-response.
+B. TCP is a reliable protocol.
+C. An unreliable zone transfer could result in serious name resolution discrepancies in a network.
+D. UDP cannot be used for bulk file transfers.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 8
+
+1. An IP router normally uses which of the following pieces of information to forward an IP packet?
+A. The destination IP address only
+B. The source and destination IP address
+C. The destination IP address and the destination TCP port
+D. The destination IP address, the TTL, and the ToS
+
+2. The two main categories of routing protocols are IGP and ______.
+A. OSPF
+B. Link state
+C. BGP
+D. EGP
+
+3. Which of the following is not a characteristic of an IGP?
+A. It is intended for networks under a common administrative control.
+B. It is used between ASes.
+C. There are not as many policy enforcement features as an EGP.
+D. It includes distance vector and link state protocols.
+
+4. A router can run multiple routing protocols that each have their own table of
+routing information. A router selects the best route for each destination from
+all routing sources and puts them in the ______.
+A. Routing Link Database
+B. Routing Information Base
+C. Routing Table
+D. ARP Table
+
+5. Which of the following pairings is not correct?
+A. EGP—BGP4
+B. Link state—OSPF
+C. IGP—RIP
+D. Distance vector—IS-IS
+
+6. In which situation would you be most likely to use a static default route?
+A. In small networks
+B. On links with only a single path to other routers
+C. When you have older routers
+D. On a low-bandwidth link
+
+7. It is said that distance vector protocols have a longer convergence time than link
+state protocols. What is the most likely reason for this?
+A. Link state protocols send less information.
+B. Link state protocols keep track of neighbors via Hello updates.
+C. The shortest path algorithm is much faster to calculate than the calculation
+performed by a distance vector protocol.
+D. Distance vector protocols rely on updates only from neighbors.
+
+8. There are many advantages of link state protocols over distance vector protocols.
+Which of the following is a potential advantage of distance vector?
+A. Distance vector sends its entire routing table in updates.
+B. Distance vector does not require extensive processing to build the
+routing table.
+C. Distance vector sends updates at timed intervals.
+D. Distance vector relies on neighbors to report routing updates.
+
+9. When a link state router receives an LSP update, it uses what algorithm to calculate its routing table?
+A. OSPF
+B. Spanning tree
+C. SPF
+D. Least cost
+
+10. Which of the following is most likely to be used for forwarding IP packets from a
+stub network?
+A. A static route
+B. A default route
+C. A floating static route
+D. OSPF with the “stub area” feature
+
+11. The forwarding of packets on a router is a function of the data plane. The use of a
+routing protocol to build routing tables is a function of ______.
+A. The routing plane
+B. The control plane
+C. The OSPF plane
+D. The protocol plane
+
+12. Link state protocols flood LSP information throughout the network to each
+router. These LSPs are stored in ______.
+A. The routing table
+B. The FIB
+C. The routing database
+D. The link state database
+
+13. If there are multiple identical network prefixes advertised by different routing protocols, the Routing Table Manager chooses the route to place in the routing table
+based on ______.
+A. It enters a route based on the lowest metric value.
+B. It enters a route based on the highest preference value.
+C. It enters a route based on the lowest preference value.
+D. It enters a route for each protocol in the routing table.
+
+14. Using a link state protocol, which of the following best describes the view each
+router has of all the links in the network after all LSPs have been flooded?
+A. Each router has a common view of the network.
+B. Each router has a unique view of the network based on its location.
+C. Each router knows about only those LSPs originated from its neighbors.
+D. Each router knows about all LSPs but uses only LSPs from its neighbors to
+construct its view.
+
+15. Which of the following is the most accurate explanation of the information a distance vector routing protocol sends to neighboring routers?
+A. It sends Hello updates.
+B. It sends its entire routing table.
+C. It floods LSPs.
+D. It sends its entire routing table and its neighbors’ routing tables.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 9
+
+1. OSPF discovers neighbors ______.
+A. Only by manually configuring the router
+B. By flooding updates
+C. Using Hello advertisements
+D. Using a host table
+
+2. Which of the following is not a feature of the OSPF protocol?
+A. It supports authentication.
+B. It provides a loop-free topology.
+C. It uses the Shortest Path First algorithm.
+D. It uses a hop count–based metric.
+
+3. Which logical interface is recommended for defining a router ID?
+A. Ethernet interface
+B. Chassis interface
+C. MAC address
+D. System interface
+
+4. What is the primary purpose of the OSPF router ID?
+A. To elect a designated router
+B. To uniquely identify an OSPF router
+C. To trace sequence numbers
+D. To support LSA flooding
+
+5. LSA updates are sent in response to network changes and ______.
+A. Every 30 minutes
+B. After the Hello timer expires
+C. When the DR detects the BDR has failed
+D. Every 30 minutes provided new information needs to be transmitted
+
+6. What does it mean to say that two OSPF routers are adjacent?
+A. The routers are physically connected on a point-to-point link.
+B. The routers are on a common network segment and have exchanged database
+information.
+C. The routers have exchanged Hello packets.
+D. The routers are in a single area.
+
+7. What is required for OSPF routers on a point-to-point network to form an adjacency?
+A. The DR must form an adjacency first.
+B. The neighbor IP address must be configured.
+C. They will automatically become adjacent provided certain OSPF configuration values match.
+D. Nothing. OSPF routers on point-to-point links will always become adjacent.
+
+8. Which of the following hello packet values is not involved in the adjacency process
+on point-to-point links?
+A. The area ID
+B. The priority
+C. The Hello timer
+D. The dead timer
+
+9. In addition to having correct OSPF settings in the Hello packets, another value that
+can prevent routers from forming an adjacency in the event of a mismatch is ______.
+A. The AS number
+B. The OSPF MTU
+C. The OSPF metric
+D. The MPLS TE
+
+10. The command to display the Link State Updates that a router has received is ______.
+A. show router ospf status
+B. show router ospf links
+C. show router ospf summary
+D. show router ospf database
+
+11. There are many different types of LSAs in OSPF. The most common LSA type in
+point-to-point networks is ______.
+A. The area LSA
+B. The router LSA
+C. The network LSA
+D. The summary LSA
+
+12. If an OSPF router receives an LSA with a sequence number that is equal to the
+sequence number it already has for that LSA, it will ______.
+A. Silently drop the LSA.
+B. Send a rejection notice to the sending router.
+C. Drop the LSA and send an acknowledgement.
+D. Drop the LSA and forward it to its adjacent routers.
+
+13. Which of the following is false regarding the Shortest Path First algorithm that
+OSPF uses?
+A. It determines the optimal route to each network.
+B. It creates a loop-free path to each network.
+C. It is run only on the router that originates an LSA update.
+D. It runs every time a new LSA is received.
+
+14. Which of the following correctly identifies the order of steps for two OSPF routers
+to become fully adjacent?
+A. Exchange, Loading, SPF, Adjacent
+B. Exchange, ExStart, Loading
+C. ExStart, Exchange, Loading, Full
+D. ExStart, Exchange, Loading, Adjacent
+
+15. Which of the following default metrics is not correct for the given interface speed?
+A. 1 Gbps link = 100
+B. 16 Mbps link = 6,250
+C. 1.544 Mbps link = 64,766
+D. 622 Mbps link = 16
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 10
+
+1. The primary purpose of an EGP is to ______.
+A. Handle large routing tables.
+B. Distribute routing information between ASes.
+C. Support routing inside a large enterprise network.
+D. Provide a default route to the Internet.
+
+2. Which of the following is false regarding ASes?
+A. The assignment of public AS numbers is controlled by RIRs.
+B. 65,001 is a private AS number.
+C. An IGP is required for routing within the AS.
+D. The AS usually contain routers under the control of different administrative
+groups.
+
+3. Which logical interface is preferred for creating internal BGP sessions?
+A. Ethernet interface
+B. Chassis interface
+C. MAC address
+D. System interface
+
+4. Which of the following is true regarding BGP neighbors?
+A. They can be discovered automatically.
+B. They need to be directly connected.
+C. They can be in the same or different AS.
+D. Not all internal BGP speakers need to have the same information about
+routes outside the AS.
+
+5. Two BGP routers configured as neighbors communicate using ______.
+A. TCP on a variable port
+B. UDP on a fixed port
+C. TCP on a fixed port
+D. IP using a fixed protocol
+
+6. The primary purpose of iBGP is ______.
+A. To ensure that routers inside an AS have a common view of networks outside
+the AS
+B. To ensure that the IGP has multiple exit points from an AS
+C. To serve as back-up routers to eBGP
+D. To exchange routes with external ASes
+
+7. By default, BGP will choose the best path to a given network destination based
+on ______.
+A. The sum of the interface speeds to a destination
+B. The shortest AS path
+C. The AS that is configured with special non-discretionary attributes
+D. The AS that re-distributed the route from OSPF into BGP
+
+8. Once BGP peers establish a connection, they send routing updates to each other
+using ______.
+A. A keep alive message
+B. A next-hop update
+C. An update message
+D. A networks message
+
+9. By looking only at the BGP configuration statements on two routers, you can tell
+if they are iBGP peers or eBGP peers because ______.
+A. The statement says iBGP or eBGP.
+B. The statement contains the word internal or external.
+C. Internal peering statements are configured separately.
+D. The AS number is associated with each peer statement.
+
+10. The command to display the status of your BGP process is ______.
+A. show router bgp process
+B. show router bgp summary
+C. show router bgp info
+D. show router bgp status
+
+11. In the event that a previously advertised network becomes unreachable, BGP
+will ______.
+A. Advertise the route with a null AS-path.
+B. Tear down the peer connection.
+C. Send a withdraw message.
+D. Update its route table but take no other action.
+
+12. In which of the following situations would you be least likely to use BGP?
+A. A service provider with multiple connections to other providers
+B. An enterprise with multiple connections to the same ISP
+C. An enterprise with multiple connections to different ISPs
+D. A service provider with a single connection to a higher-level ISP
+
+13. The three well-known mandatory attributes in BGP are ______.
+A. Origin, AS-path, and community
+B. AS-path, community, and next-hop
+C. AS-path, peer, and next-hop
+D. AS-path, origin, and next-hop
+
+14. A BGP router usually does not need to receive a full Internet routing table
+if ______.
+A. It is the single exit point for an AS.
+B. It is one of several exit points from an AS.
+C. It is part of a transit AS.
+D. It is providing updates to downstream providers.
+
+15. All of the following are reasons that using BGP between ASes is preferable to
+using IGP route re-distribution except ______.
+A. Route re-distribution loses the metrics of the original IGP.
+B. Route re-distribution can lead to routing loops.
+C. BGP provides a consistent interface for route exchange across various ASes.
+D. Route re-distribution provides for greater policy control.
+
+
+===================================================================================================================
+===================================================================================================================
+=== Chapter 11
+
+1. Which of the following accurately describes a P device?
+A. It is used exclusively by the customer.
+B. It is responsible for adding and removing labels.
+C. It swaps label information and forwards packets.
+D. It creates an LSP in the provider network.
+
+2. Which of the following is false regarding an SDP?
+A. It provides transport tunnel encapsulation.
+B. It is specific to a single service.
+C. The SDP ID is locally unique.
+D. LDP can be used as the signaling protocol.
+
+3. Which of the following is not an accurate description of a VPN?
+A. A series of point-to-point tunnels configured on client equipment
+B. A tunnel technology created in a provider network
+C. A function of MPLS networks to create private communities of users
+D. Any network that includes encryption
+
+4. Which of the following is false regarding LDP?
+A. It is used to define unidirectional paths through the network.
+B. It is a protocol specifically intended for label distribution.
+C. It is the only method for distributing labels in an MPLS network.
+D. It describes a path through the MPLS network based on the IGP path.
+
+5. Which of the following term–definition pairs is incorrect?
+A. Push—Add a label
+B. Swap—Replace a label
+C. Label distribution protocol—Series of labels and next-hop interfaces
+D. Pop—Remove a label
+
+6. The most commonly used label distribution protocol is ______.
+A. OSPF
+B. BGP
+C. LDP
+D. RIP
+
+7. Which of the following is not a type of VPN?
+A. VPWS
+B. VPNM
+C. VPLS
+D. VPRN
+
+8. A VPN that provides a simple point-to-point service between two destinations
+is a ______.
+A. VPNM
+B. VPLS
+C. VPWS
+D. None of the above
+
+9. The VPN service that must maintain a table of MAC addresses is ______.
+A. VPWS
+B. VPLS
+C. VPRN
+D. Both A and B
+
+10. The VPN service that requires encryption is ______.
+A. VPRN
+B. VPNM
+C. VPLS
+D. None of the above
+
+11. The VPN service that appears to the customer as a private routed network is ______.
+A. VPNM
+B. VPRN
+C. VPLS
+D. VPWS
+
+12. As a packet traverses an MPLS network, it passes through a router that
+removes one label and replaces it with another. The router it passed through
+was a ______ router.
+A. PE
+B. CE
+C. LER
+D. P
+
+13. A packet arrives at a router with a label, and the router cannot perform any operations on it. The router is most likely a ______.
+A. LSR
+B. PE
+C. LER
+D. None of the above
+
+14. In an MPLS network, the customer routers have no knowledge of how the MPLS
+features are implemented. The benefits of this include ______.
+A. It makes CE configuration easier.
+B. It allows for very scalable VPN solutions.
+C. It lowers CE management overhead.
+D. All of the above
+
+15. The relationship between LDP and an IGP is best described as
+A. LDP paths are preferred over IGP routes.
+B. LDP uses IGP next-hop information.
+C. LDP re-distributes labels into IGP.
+D. IGP tags network destinations with LDP information
+
+
+
