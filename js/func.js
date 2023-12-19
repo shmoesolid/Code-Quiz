@@ -310,35 +310,46 @@ function loadByStatus()
     toggleDisplay(quizVars.status);
 }
 
+function dropStop(event)
+{
+    event.preventDefault();
+    event.stopPropagation();
 
-function dropHandler(ev) 
+}
+
+function dragOverStop(event)
+{
+    event.preventDefault();
+    //event.dataTransfer.dropEffect = "none";
+}
+
+function dropHandler(event) 
 {
     console.log("File(s) dropped");
 
     // Prevent default behavior (Prevent file from being opened)
-    ev.preventDefault();
+    event.preventDefault();
+    event.stopPropagation();
 
-    if (ev.dataTransfer.items) 
-    {
-        // Use DataTransferItemList interface to access the file(s)
-        [...ev.dataTransfer.items].forEach((item, i) => {
+    // get stuff, do stuff
+    var targetElement = event.target || event.srcElement;
+    var file = event.dataTransfer.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {            
+        targetElement.value = e.target.result;
 
-            // If dropped items aren't files, reject them
-            if (item.kind === "file") 
-            {
-                const file = item.getAsFile();
-                console.log(`… file[${i}].name = ${file.name}`);
-            }
+        if (targetElement.id == "dropZoneQuestions") {
+            quizItems.importQuestions(e.target.result);
+        } else if (targetElement.id == "dropZoneAnswers") {
+            quizItems.importAnswers(e.target.result);
+        } else {
+            console.log("file import error");
+        }
+    };
+    reader.readAsText(file, "UTF-8");
+}
 
-        });
-    } 
-    else 
-    {
-        // Use DataTransfer interface to access the file(s)
-        [...ev.dataTransfer.files].forEach((file, i) => {
-
-            console.log(`… file[${i}].name = ${file.name}`);
-            
-        });
-    }
+function dragOverHandler(event)
+{
+    event.preventDefault();
 }

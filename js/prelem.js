@@ -134,20 +134,72 @@ var quizItems =
     ///////////////////////////////////////////////////////////////////
     // methods
 
+    importQuestions(file)
+    {
+        console.log("import questions");
+        // need function for going through and converting special chars that will mess up 
+        // variable string quotes or html, ie turn " into \", < into &lt; and > into &gt;, etc
+        // also maybe replace CR or EOL with <br /> or just make it a <pre> if not already
+
+        // parse out file
+        /* 
+        turn this:
+
+        1. this is a multiline 
+        question?
+        A. answer 1
+        B. answer 2
+        C. answer 3
+        D. answer 4
+
+        into this:
+        
+        "0": { // the number question in the import will be ignored
+            correctCode: "",
+            question: "Which of the following is NOT a valid declcaration type in ES6.",
+            explaination: "",
+            answers: [
+                "var name = 'John';",
+                "let name = 'John';",
+                "const name = 'John';",
+                "string name = 'John';"
+            ]
+        },
+        */
+    },
+
+    importAnswers(file)
+    {
+        console.log("import answers");
+        // parse out file
+        /* 
+        turn this:
+
+        1. A. this is a description
+        with multiline features
+
+        into this:
+        
+        "0": { // the number question in the import will be ignored, will go off order and index
+            correctCode: "0", // 0 for a, 1 for b, etc
+            question: "Which of the following is NOT a valid declcaration type in ES6.",
+            explaination: "this is a description with multiline features",
+            answers: [
+                "var name = 'John';",
+                "let name = 'John';",
+                "const name = 'John';",
+                "string name = 'John';"
+            ]
+        },
+        */
+    },
+
     // simply for comparing answers
     compareAnswer(QID, plainAnswer)
     {
-        console.log(QID +" ... "+ plainAnswer);
-        console.log(this[QID]);
-        // compare plain answer to question ID that's either coded or
-        // even in plain text if dev hasn't coded them yet
-        //if (this[QID].correctCode == this.generateCode(QID, plainAnswer)
-        //    || this[QID].correctCode == plainAnswer
-        //) {
-        
+        // compare answers
         if (this[QID].correctCode == plainAnswer)
             return true;
-        //}
 
         return false;
     },
